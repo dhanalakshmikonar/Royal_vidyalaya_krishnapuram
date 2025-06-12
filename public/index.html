@@ -14,6 +14,8 @@
         <li><a href="#home" class="nav-link">Home</a></li>
         <li><a href="#about" class="nav-link">About Us</a></li>
         <li><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li><a href="#Academics" class="nav-link">Academics</a></li>
+        <li><a href="#Notice" class="nav-link">Notice</a></li>
         <li><a href="#contact" class="nav-link">Contact Us</a></li>
       </ul>
     </nav>
@@ -41,14 +43,85 @@
     <p>Moments of learning, joy, and creativity at Royal Vidyalaya</p>
     
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="C:\Users\Hp\Downloads\school1.jpg" alt="Event 1" /></div>
-      <div class="gallery-item"><img src="C:\Users\Hp\Downloads\school2.jpg" alt="Event 2" /></div>
-      <div class="gallery-item"><img src="C:\Users\Hp\Downloads\school3.jpg" alt="Event 3" /></div>
-      <div class="gallery-item"><img src="C:\Users\Hp\Downloads\school4.jpg" alt="Event 4" /></div>
-      <div class="gallery-item"><img src="C:\Users\Hp\Downloads\schhol5.jpg" alt="Event 5" /></div>
-      <div class="gallery-item"><img src="C:\Users\Hp\Downloads\school6.jpg" alt="Event 6" /></div>
+      <div class="gallery-item"><img src="images/school1.jpg" alt="Event 1" /></div>
+      <div class="gallery-item"><img src="images/school2.jpg" alt="Event 2" /></div>
+      <div class="gallery-item"><img src="images/school3.jpg" alt="Event 3" /></div>
+      <div class="gallery-item"><img src="images/school4.jpg" alt="Event 4" /></div>
+      <div class="gallery-item"><img src="images/schhol5.jpg" alt="Event 5" /></div>
+      <div class="gallery-item"><img src="images/school6.jpg" alt="Event 6" /></div>
     </div>
   </section>
+
+  <section class="academics-section" id="Academics">
+    <h2>Academics</h2>
+    <p class="intro">Our academic programs are designed to provide all-round development and prepare students for a bright future.</p>
+
+    <div class="academic-card" onclick="toggleContent(this)">
+      <h3>Primary School (Class I - V)</h3>
+      <div class="academic-content">
+        <p>Focus on foundational learning through interactive methods and continuous evaluation. Subjects include English, Math, EVS, Hindi, and Art.</p>
+      </div>
+    </div>
+
+    <div class="academic-card" onclick="toggleContent(this)">
+      <h3>Middle School (Class VI - VIII)</h3>
+      <div class="academic-content">
+        <p>Development of analytical skills and introduction to subject specialization. Subjects include Science, Social Science, Computer, and Languages.</p>
+      </div>
+    </div>
+
+    <div class="academic-card" onclick="toggleContent(this)">
+      <h3>Secondary School (Class IX - X)</h3>
+      <div class="academic-content">
+        <p>CBSE-based curriculum with focus on board exam preparation, project work, and career guidance.</p>
+      </div>
+    </div>
+
+    <div class="academic-card" onclick="toggleContent(this)">
+      <h3>Senior Secondary (Class XI - XII)</h3>
+      <div class="academic-content">
+        <p>Streams offered: Science (PCM/PCB), Commerce, and Humanities. Emphasis on career readiness and practical learning.</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+
+  <section id="Notice" class="card">
+      <center><h2>Notice Board</h2></center>
+      <ul>
+        <li>📌 School reopens on 17th June.</li>
+        <li>📌 Parent-teacher meeting on 22nd June.</li>
+        <li>📌 Science Exhibition on 28th June.</li>
+      </ul>
+    </section>
+
+    <section id="events" class="card">
+      <h2>Upcoming Events</h2>
+      <table>
+        <thead>
+          <tr><th>Date</th><th>Event</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>17 Jun</td><td>School Reopening</td></tr>
+          <tr><td>22 Jun</td><td>PTM (Grades 1–10)</td></tr>
+          <tr><td>28 Jun</td><td>Science Exhibition</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="admissions" class="card">
+      <h2>Admission Types</h2>
+      <ul>
+        <li>🧒 Kindergarten</li>
+        <li>📘 Primary School (Grades 1–5)</li>
+        <li>📗 Middle School (Grades 6–8)</li>
+        <li>📙 High School (Grades 9–12)</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="trial.js"></script>
 
     <section class="contact-section" id="contact">
     <div class="contact-container">
@@ -95,6 +168,16 @@
     <p>&copy; 2025 Royal Vidyalaya. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+ <!-- Chatbot Container -->
+<!-- Chatbot Toggle Icon -->
+<div id="chatbot-toggle" onclick="toggleChatbot()" title="Chat with us">💬</div>
+
+<!-- Chatbot Container (Initially Hidden) -->
+<div id="school-chatbot-root" style="display: none;"></div>
+<link rel="stylesheet" href="chatbot/chatbot.css" />
+<div id="school-chatbot-root"></div>
+<script src="chatbot/chatbot.js"></script>
+
+<!-- ✅ Chatbot Widget End -->
 </body>
 </html>

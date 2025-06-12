@@ -315,3 +315,134 @@ body {
   font-weight: 600;
   color: green;
 }
+body {
+  background: url('images/contact.jpg') no-repeat center center/cover;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.academics-section {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  border-radius: 12px;
+}
+
+.academics-section h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.intro {
+  text-align: center;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.academic-card {
+  background: #e3f2fd;
+  margin-bottom: 15px;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.academic-card:hover {
+  background: #bbdefb;
+  transform: scale(1.01);
+}
+
+.academic-card h3 {
+  margin: 0;
+  color: #0d47a1;
+}
+
+.academic-content {
+  margin-top: 10px;
+  display: none;
+  color: #333;
+  transition: opacity 0.3s ease;
+}
+
+
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #0055a5;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.card {
+  background: white;
+  margin: 1.5rem auto;
+  padding: 1rem 2rem;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+  margin-bottom: 1rem;
+  color: #0055a5;
+}
+
+.card ul li {
+  padding: 0.4rem 0;
+}
+
+.card table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.card table, th, td {
+  border: 1px solid #ccc;
+}
+
+.card th, .card td {
+  padding: 0.5rem;
+  text-align: left;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #003f7f;
+  color: white;
+  margin-top: 2rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #003f7f;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+  }
+
+  #menu-toggle {
+    display: block;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+}
+
