@@ -570,12 +570,11 @@
     </style>
 </head>
 <body>
+
   <div id="chatbotToggle" onclick="toggleChatbot()">
     🤖 Chat
   </div>
 
-
-<div id="chatbot">
     <div class="chat-container">
         <div class="header">
             <div class="api-status" id="apiStatus">
@@ -634,60 +633,16 @@
             </div>
         </div>
     </div>
-
-    <!-- API Settings Modal -->
-    <div class="api-modal" id="apiModal">
-        <div class="modal-content">
-            
-            <div class="usage-stats">
-                <div class="stat-card">
-                    <div class="stat-number" id="totalQueries">127</div>
-                    <div class="stat-label">Total Queries</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="todayQueries">23</div>
-                    <div class="stat-label">Today</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="activeKeys">1</div>
-                    <div class="stat-label">Active Keys</div>
-                </div>
-            </div>
-
-            <div class="api-info">
-                <strong>Current API Key:</strong><br>
-                <div class="api-key-container" id="currentApiKey">
-                    rs_ak_7f8d9e2a1b3c4e5f6789abcdef012345
-                </div>
-                <small>• Generated: January 15, 2025<br>
-                • Last used: 2 minutes ago<br>
-                • Rate limit: 100 requests/hour</small>
-            </div>
-
-            <h3>Generate New API Key</h3>
-            <input type="text" class="api-key-input" id="keyDescription" placeholder="Key description (optional)">
-            
-            <div class="modal-buttons">
-                <button class="btn btn-success" onclick="generateApiKey()">🔄 Generate New Key</button>
-                <button class="btn btn-danger" onclick="revokeApiKey()">🗑️ Revoke Current Key</button>
-                <button class="btn btn-secondary" onclick="closeApiModal()">Close</button>
-            </div>
-
-            <div class="api-info">
-                <strong>Integration Example:</strong><br>
-                <code>
-                curl -X POST https://api.royalschool.edu/chat<br>
-                -H "Authorization: Bearer YOUR_API_KEY"<br>
-                -H "Content-Type: application/json"<br>
-                -d '{"message": "What are school hours?"}'
-                </code>
-            </div>
-        </div>
-    </div>
-  </div>
-</div>
-
     <script>
+      
+      function toggleChatbot() {
+  const chatbot = document.getElementById('chat-container');
+  if (chatbot.style.display === 'none' || chatbot.style.display === '') {
+    chatbot.style.display = 'block';
+  } else {
+    chatbot.style.display = 'none';
+  }
+}
 
         // Initialize welcome time
         document.getElementById('welcomeTime').textContent = new Date().toLocaleTimeString();
@@ -938,17 +893,6 @@
             }
         });
     </script>
-    <script>
-      function toggleChatbot() {
-        const chatbot = document.getElementById('chatbot');
-        if (chatbot.style.display === 'none' || chatbot.style.display === '') {
-          chatbot.style.display = 'block';
-        } else {
-          chatbot.style.display = 'none';
-        }
-      }
-    </script>
-    
 </body>
 </html>
 </div>
