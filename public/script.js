@@ -76,19 +76,5 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-function toggleContent(card) {
-  const content = card.querySelector('.academic-content');
-  const allContents = document.querySelectorAll('.academic-content');
-
-  allContents.forEach(c => {
-    if (c !== content) c.style.display = "none";
-  });
-
-  content.style.display = content.style.display === 'block' ? 'none' : 'block';
-}
-document.getElementById('menu-toggle').addEventListener('click', () => {
-  const menu = document.getElementById('menu');
-  menu.classList.toggle('show');
-});
 
 

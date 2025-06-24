@@ -15,11 +15,10 @@ app.post('/chat', async (req, res) => {
 
   try {
     const response = await axios.post(
-      'https://api.royalschool.edu/chat',
+      `${process.env.API_URL}/api/chat`, // ✅ Use your actual deployed API
       { message: userMessage },
       {
         headers: {
-          'Authorization': `Bearer ${process.env.API_KEY}`,
           'Content-Type': 'application/json'
         }
       }

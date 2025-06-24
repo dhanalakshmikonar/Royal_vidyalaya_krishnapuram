@@ -1,228 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Royal Vidyalaya</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <div class="logo">Royal Vidyalaya</div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#home" class="nav-link">Home</a></li>
-        <li><a href="#about" class="nav-link">About Us</a></li>
-        <li><a href="#gallery" class="nav-link">Gallery</a></li>
-        <li><a href="#Academics" class="nav-link">Academics</a></li>
-        <li><a href="#Notice" class="nav-link">Notice</a></li>
-        <li><a href="#contact" class="nav-link">Contact Us</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section id="home" class="full-screen">
-    <div class="home-content">
-      <h1>Welcome to Royal Vidyalaya</h1>
-      <p>Where learning meets excellence</p>
-      <a href="#about" class="btn">Learn More</a>
-    </div>
-  </section>
-
-  <section id="about" class="about-section">
-  <div class="about-box">
-    <h2>About Us</h2>
-    <p>Royal Vidyalaya is a premier CBSE-affiliated institution dedicated to nurturing future leaders. We provide a strong academic foundation while fostering values, creativity, and independent thinking.</p>
-    <p>Our aim is to promote all-round development—intellectual, physical, emotional, and social—by offering co-curricular and extracurricular programs that enrich each student’s school experience.</p>
-    <p>We take pride in preserving our rich cultural heritage by instilling moral values and respect for traditions, preparing students to thrive in a global society with strong roots and a forward-looking mindset.</p>
-  </div>
-</section>
-
-  <section class="gallery-section" id="gallery">
-    <h2>Our School Gallery</h2>
-    <p>Moments of learning, joy, and creativity at Royal Vidyalaya</p>
-    
-    <div class="gallery-grid">
-      <div class="gallery-item"><img src="images/school1.jpg" alt="Event 1" /></div>
-      <div class="gallery-item"><img src="images/school2.jpg" alt="Event 2" /></div>
-      <div class="gallery-item"><img src="images/school3.jpg" alt="Event 3" /></div>
-      <div class="gallery-item"><img src="images/school4.jpg" alt="Event 4" /></div>
-      <div class="gallery-item"><img src="images/schhol5.jpg" alt="Event 5" /></div>
-      <div class="gallery-item"><img src="images/school6.jpg" alt="Event 6" /></div>
-    </div>
-  </section>
-
-  <section class="academics-section" id="Academics">
-    <h2>Academics</h2>
-    <p class="intro">Our academic programs are designed to provide all-round development and prepare students for a bright future.</p>
-
-    <div class="academic-card" onclick="toggleContent(this)">
-      <h3>Primary School (Class I - V)</h3>
-      <div class="academic-content">
-        <p>Focus on foundational learning through interactive methods and continuous evaluation. Subjects include English, Math, EVS, Hindi, and Art.</p>
-      </div>
-    </div>
-
-    <div class="academic-card" onclick="toggleContent(this)">
-      <h3>Middle School (Class VI - VIII)</h3>
-      <div class="academic-content">
-        <p>Development of analytical skills and introduction to subject specialization. Subjects include Science, Social Science, Computer, and Languages.</p>
-      </div>
-    </div>
-
-    <div class="academic-card" onclick="toggleContent(this)">
-      <h3>Secondary School (Class IX - X)</h3>
-      <div class="academic-content">
-        <p>CBSE-based curriculum with focus on board exam preparation, project work, and career guidance.</p>
-      </div>
-    </div>
-
-    <div class="academic-card" onclick="toggleContent(this)">
-      <h3>Senior Secondary (Class XI - XII)</h3>
-      <div class="academic-content">
-        <p>Streams offered: Science (PCM/PCB), Commerce, and Humanities. Emphasis on career readiness and practical learning.</p>
-      </div>
-    </div>
-  </section>
-
-  <script src="script.js"></script>
-
-  <section id="Notice" class="card">
-      <center><h2>Notice Board</h2></center>
-      <ul>
-        <li>📌 School reopens on 17th June.</li>
-        <li>📌 Parent-teacher meeting on 22nd June.</li>
-        <li>📌 Science Exhibition on 28th June.</li>
-      </ul>
-    </section>
-
-    <section id="events" class="card">
-      <h2>Upcoming Events</h2>
-      <table>
-        <thead>
-          <tr><th>Date</th><th>Event</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>17 Jun</td><td>School Reopening</td></tr>
-          <tr><td>22 Jun</td><td>PTM (Grades 1–10)</td></tr>
-          <tr><td>28 Jun</td><td>Science Exhibition</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section id="admissions" class="card">
-      <h2>Admission Types</h2>
-      <ul>
-        <li>🧒 Kindergarten</li>
-        <li>📘 Primary School (Grades 1–5)</li>
-        <li>📗 Middle School (Grades 6–8)</li>
-        <li>📙 High School (Grades 9–12)</li>
-      </ul>
-    </section>
-  </main>
-
-  <script src="trial.js"></script>
-
-    <section class="contact-section" id="contact">
-    <div class="contact-container">
-      <h2>Contact Us</h2>
-      <p>We'd love to hear from you. Please fill out the form below.</p>
-      <form id="contactForm">
-        <div class="form-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" placeholder="Your Name" required />
-          <span class="error-message" id="nameError"></span>
-        </div>
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" placeholder="Your Email" required />
-          <span class="error-message" id="emailError"></span>
-        </div>
-        <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required />
-          <span class="error-message" id="phoneError"></span>
-        </div>
-        <div class="form-group">
-          <label for="message">Your Message</label>
-          <textarea id="message" name="message" placeholder="Type your message here..." rows="5" required></textarea>
-          <span class="error-message" id="messageError"></span>
-        </div>
-        <button type="submit" class="submit-button">Send Message</button>
-      </form>
-      <div class="form-response" id="formResponse"></div>
-    </div>
-  </section>
-
-  <center>
-  <section>
-    <h2>Know more</h2>
-    <p>We’d love to hear from you. Reach out for any queries.</p>
-    <p><strong>Address:</strong> 5th street, Krishnapuram, India, Tamil Nadu</p>
-    <p><strong>Phone:</strong> 096008 05046</p>
-    <p><strong>Email:</strong> royalvidyalaya1986@gmail.com</p>
-  </section>
-  </center>             
-
-  <footer>
-    <p>&copy; 2025 Royal Vidyalaya. All rights reserved.</p>
-  </footer>
-
- <!-- Chatbot UI copied here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal School - Q&A Bot</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.chatbot {
-  display: none; /* hide initially */
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  width: 360px;
-  max-height: 90vh;
-  z-index: 9998;
-}
-
-.chatbotToggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #4b6cb7;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 30px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-  z-index: 9999;
-  transition: background-color 0.3s ease;
-}
-.chatbotToggle:hover {
-  background-color: #182848;
-}
-
-
-.chat-container {
-  display:none;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 300px;
-  height: 400px;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  z-index: 9999;
-}
-
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
         .chat-container {
             width: 90%;
-            max-width: 350px;
-            height: 70vh;
+            max-width: 600px;
+            height: 90vh;
             background: white;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -307,6 +108,19 @@
             background: rgba(255,255,255,0.3);
         }
 
+        .api-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
         .modal-content {
             background: white;
             padding: 30px;
@@ -320,6 +134,27 @@
             color: #667eea;
             margin-bottom: 20px;
         }
+
+        .api-key-container {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: monospace;
+            font-size: 14px;
+            word-break: break-all;
+            border: 2px solid #e9ecef;
+        }
+
+        .api-key-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-family: monospace;
+        }
+
         .modal-buttons {
             display: flex;
             gap: 10px;
@@ -359,6 +194,16 @@
             opacity: 0.9;
         }
 
+        .api-info {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            text-align: left;
+            font-size: 13px;
+            color: #1565c0;
+        }
+
         .usage-stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -380,18 +225,18 @@
         }
 
         .stat-label {
-            font-size: 10px;
+            font-size: 12px;
             color: #666;
         }
 
         .quick-buttons {
-            padding: 10px;
+            padding: 15px;
             background: #f8f9fa;
             border-bottom: 1px solid #e9ecef;
         }
 
         .quick-buttons p {
-            font-size: 10px;
+            font-size: 14px;
             margin-bottom: 10px;
             color: #666;
         }
@@ -437,10 +282,10 @@
 
         .message-bubble {
             max-width: 80%;
-            padding: 8px 12px;
+            padding: 12px 16px;
             border-radius: 18px;
-            font-size: 11px;
-            line-height: 1.2;
+            font-size: 14px;
+            line-height: 1.4;
         }
 
         .message.bot .message-bubble {
@@ -529,11 +374,11 @@
             flex: 1;
             padding: 12px 16px;
             border: 1px solid #ddd;
-            border-radius: 20px;
+            border-radius: 25px;
             outline: none;
-            font-size: 12px;
+            font-size: 14px;
             resize: none;
-            max-height: 90px;
+            max-height: 100px;
         }
 
         .input-field:focus {
@@ -570,17 +415,13 @@
     </style>
 </head>
 <body>
-  <div id="chatbotToggle" onclick="toggleChatbot()">
-    🤖 Chat
-  </div>
-
-
-<div id="chatbot">
     <div class="chat-container">
         <div class="header">
             <div class="api-status" id="apiStatus">
                 <div class="status-dot" id="statusDot"></div>
+                <span id="statusText">API Active</span>
             </div>
+            <button class="settings-btn" onclick="openApiModal()">⚙️ API</button>
             <button class="clear-btn" onclick="clearChat()">Clear Chat</button>
             <h1>👑 Royal School</h1>
             <p>School Information Assistant</p>
@@ -638,6 +479,7 @@
     <!-- API Settings Modal -->
     <div class="api-modal" id="apiModal">
         <div class="modal-content">
+            <h2>🔑 API Key Management</h2>
             
             <div class="usage-stats">
                 <div class="stat-card">
@@ -684,11 +526,8 @@
             </div>
         </div>
     </div>
-  </div>
-</div>
 
     <script>
-
         // Initialize welcome time
         document.getElementById('welcomeTime').textContent = new Date().toLocaleTimeString();
 
@@ -938,24 +777,5 @@
             }
         });
     </script>
-    <script>
-      function toggleChatbot() {
-        const chatbot = document.getElementById('chatbot');
-        if (chatbot.style.display === 'none' || chatbot.style.display === '') {
-          chatbot.style.display = 'block';
-        } else {
-          chatbot.style.display = 'none';
-        }
-      }
-    </script>
-    
-</body>
-</html>
-</div>
-
-<script src="api/chat.js"></script> <!-- Chatbot UI copied here -->
-
-
-<!-- ✅ Chatbot Widget End -->
 </body>
 </html>
