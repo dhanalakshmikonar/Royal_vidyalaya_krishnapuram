@@ -168,609 +168,455 @@
     <p>&copy; 2025 Royal Vidyalaya. All rights reserved.</p>
   </footer>
 
- <!-- Chatbot UI copied here -->
     <style>
-
-.chatbot {
-  display: none; /* hide initially */
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  width: 360px;
-  max-height: 90vh;
-  z-index: 9998;
-}
-
-.chatbotToggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #4b6cb7;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 30px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-  z-index: 9999;
-  transition: background-color 0.3s ease;
-}
-.chatbotToggle:hover {
-  background-color: #182848;
-}
-
-
-.chat-container {
-  display:none;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 300px;
-  height: 400px;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  z-index: 9999;
-}
-
-
-        .chat-container {
-            width: 90%;
-            max-width: 350px;
-            height: 70vh;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
+        /* COMPACT ROYAL SCHOOL WIDGET */
+        .royal-widget {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            z-index: 9999;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
-
-        .header {
+        
+        .widget-btn {
+            width: 48px;
+            height: 48px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 20px;
-            text-align: center;
-            position: relative;
-        }
-
-        .header h1 {
-            font-size: 24px;
-            margin-bottom: 5px;
-        }
-
-        .header p {
-            font-size: 14px;
-            opacity: 0.9;
-        }
-
-        .api-status {
-            position: absolute;
-            top: 10px;
-            left: 15px;
-            background: rgba(255,255,255,0.2);
-            padding: 4px 8px;
-            border-radius: 12px;
-            font-size: 11px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 3px 15px rgba(102, 126, 234, 0.3);
             display: flex;
             align-items: center;
-            gap: 5px;
-        }
-
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #28a745;
-        }
-
-        .status-dot.inactive {
-            background: #dc3545;
-        }
-
-        .settings-btn {
-            position: absolute;
-            top: 15px;
-            right: 60px;
-            background: rgba(255,255,255,0.2);
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 12px;
-        }
-
-        .settings-btn:hover {
-            background: rgba(255,255,255,0.3);
-        }
-
-        .clear-btn {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(255,255,255,0.2);
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 12px;
-        }
-
-        .clear-btn:hover {
-            background: rgba(255,255,255,0.3);
-        }
-
-        .modal-content {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 500px;
-            text-align: center;
-        }
-
-        .modal-content h2 {
-            color: #667eea;
-            margin-bottom: 20px;
-        }
-        .modal-buttons {
-            display: flex;
-            gap: 10px;
             justify-content: center;
-            margin-top: 20px;
-        }
-
-        .btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        .btn-primary {
-            background: #667eea;
+            font-size: 18px;
             color: white;
+            transition: all 0.3s ease;
+            position: relative;
         }
-
-        .btn-secondary {
-            background: #6c757d;
+        
+        .widget-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.5);
+        }
+        
+        .notification {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            background: #ff4757;
             color: white;
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            font-size: 9px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            animation: bounce 0.6s ease-in-out;
         }
-
-        .btn-success {
-            background: #28a745;
+        
+        @keyframes bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        
+        .widget-chat {
+            position: absolute;
+            bottom: 60px;
+            right: 0;
+            width: 280px;
+            height: 360px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+            transform: scale(0.8) translateY(15px);
+            opacity: 0;
+            transition: all 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            overflow: hidden;
+            display: none;
+            flex-direction: column;
+        }
+        
+        .widget-chat.show {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+            display: flex;
+        }
+        
+        .chat-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
+            padding: 12px;
+            position: relative;
         }
-
-        .btn-danger {
-            background: #dc3545;
-            color: white;
+        
+        .header-title {
+            font-size: 13px;
+            font-weight: 600;
+            margin: 0 0 1px 0;
         }
-
-        .btn:hover {
-            opacity: 0.9;
-        }
-
-        .usage-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin: 15px 0;
-        }
-
-        .stat-card {
-            background: #f8f9fa;
-            padding: 10px;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 24px;
-            font-weight: bold;
-            color: #667eea;
-        }
-
-        .stat-label {
+        
+        .header-subtitle {
             font-size: 10px;
-            color: #666;
+            opacity: 0.9;
+            margin: 0;
         }
-
-        .quick-buttons {
-            padding: 10px;
+        
+        .header-actions {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            display: flex;
+            gap: 4px;
+        }
+        
+        .header-btn {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+        
+        .header-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .quick-actions {
+            padding: 8px;
             background: #f8f9fa;
             border-bottom: 1px solid #e9ecef;
         }
-
-        .quick-buttons p {
-            font-size: 10px;
-            margin-bottom: 10px;
-            color: #666;
-        }
-
-        .button-grid {
+        
+        .actions-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 8px;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px;
         }
-
+        
         .quick-btn {
-            padding: 8px 12px;
+            padding: 6px 4px;
             background: white;
             border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 12px;
+            border-radius: 5px;
+            font-size: 9px;
             cursor: pointer;
             transition: all 0.2s;
+            text-align: center;
+            font-weight: 500;
         }
-
+        
         .quick-btn:hover {
             background: #667eea;
             color: white;
             border-color: #667eea;
         }
-
-        .chat-messages {
+        
+        .chat-body {
             flex: 1;
-            padding: 20px;
+            padding: 8px;
             overflow-y: auto;
             background: #f8f9fa;
         }
-
+        
         .message {
-            margin-bottom: 15px;
+            margin-bottom: 8px;
             display: flex;
             align-items: flex-start;
         }
-
+        
         .message.user {
             justify-content: flex-end;
         }
-
-        .message-bubble {
+        
+        .msg-bubble {
             max-width: 80%;
-            padding: 8px 12px;
-            border-radius: 18px;
+            padding: 6px 10px;
+            border-radius: 10px;
             font-size: 11px;
-            line-height: 1.2;
+            line-height: 1.3;
         }
-
-        .message.bot .message-bubble {
+        
+        .message.bot .msg-bubble {
             background: white;
             color: #333;
             border: 1px solid #e9ecef;
-            margin-right: 10px;
+            margin-right: 4px;
         }
-
-        .message.user .message-bubble {
+        
+        .message.user .msg-bubble {
             background: #667eea;
             color: white;
-            margin-left: 10px;
+            margin-left: 4px;
         }
-
+        
         .avatar {
-            width: 35px;
-            height: 35px;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 16px;
+            font-size: 10px;
             flex-shrink: 0;
         }
-
+        
         .bot-avatar {
             background: #667eea;
             color: white;
         }
-
+        
         .user-avatar {
             background: #28a745;
             color: white;
         }
-
-        .timestamp {
-            font-size: 11px;
-            opacity: 0.7;
-            margin-top: 4px;
-        }
-
+        
         .typing {
             display: none;
-            padding: 10px 16px;
+            padding: 4px 8px;
             background: white;
-            border-radius: 18px;
-            margin-left: 45px;
+            border-radius: 10px;
+            margin-left: 24px;
             border: 1px solid #e9ecef;
+            width: fit-content;
         }
-
+        
         .typing-dots {
             display: flex;
-            gap: 3px;
+            gap: 2px;
         }
-
-        .typing-dot {
-            width: 6px;
-            height: 6px;
+        
+        .dot {
+            width: 3px;
+            height: 3px;
             background: #999;
             border-radius: 50%;
             animation: typing 1.4s infinite;
         }
-
-        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
-        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
-
+        
+        .dot:nth-child(2) { animation-delay: 0.2s; }
+        .dot:nth-child(3) { animation-delay: 0.4s; }
+        
         @keyframes typing {
             0%, 60%, 100% { transform: translateY(0); }
-            30% { transform: translateY(-10px); }
+            30% { transform: translateY(-3px); }
         }
-
-        .input-area {
-            padding: 20px;
+        
+        .chat-input {
+            padding: 8px;
             background: white;
             border-top: 1px solid #e9ecef;
         }
-
-        .input-container {
+        
+        .input-box {
             display: flex;
-            gap: 10px;
+            gap: 6px;
             align-items: flex-end;
         }
-
+        
         .input-field {
             flex: 1;
-            padding: 12px 16px;
+            padding: 6px 10px;
             border: 1px solid #ddd;
-            border-radius: 20px;
+            border-radius: 15px;
             outline: none;
-            font-size: 12px;
+            font-size: 11px;
             resize: none;
-            max-height: 90px;
+            max-height: 40px;
+            font-family: inherit;
         }
-
+        
         .input-field:focus {
             border-color: #667eea;
         }
-
+        
         .send-btn {
-            width: 45px;
-            height: 45px;
+            width: 28px;
+            height: 28px;
             background: #667eea;
             color: white;
             border: none;
             border-radius: 50%;
             cursor: pointer;
-            font-size: 16px;
-            transition: all 0.2s;
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
         }
-
-        .send-btn:hover {
+        
+        .send-btn:hover:not(:disabled) {
             background: #5a67d8;
         }
-
+        
         .send-btn:disabled {
             background: #ccc;
             cursor: not-allowed;
         }
-
-        .footer-info {
-            font-size: 11px;
-            color: #666;
-            margin-top: 8px;
+        
+        .empty-chat {
+            display: none;
             text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 11px;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 480px) {
+            .widget-chat {
+                width: calc(100vw - 25px);
+                height: calc(100vh - 80px);
+                right: -5px;
+                bottom: 65px;
+            }
+            
+            .royal-widget {
+                right: 12px;
+                bottom: 12px;
+            }
         }
     </style>
 </head>
-<body>
-
-  <div id="chatbotToggle" onclick="toggleChatbot()">
-    🤖 Chat
-  </div>
-
-    <div class="chat-container">
-        <div class="header">
-            <div class="api-status" id="apiStatus">
-                <div class="status-dot" id="statusDot"></div>
+<body style="margin: 0; height: 100vh; background: #f0f2f5; font-family: Arial, sans-serif;">
+    
+    <!-- COMPACT ROYAL SCHOOL WIDGET -->
+    <div class="royal-widget">
+        <button class="widget-btn" onclick="toggleChat()">
+            👑
+            <div class="notification" id="notification">1</div>
+        </button>
+        
+        <div class="widget-chat" id="widgetChat">
+            <div class="chat-header">
+                <div class="header-actions">
+                    <button class="header-btn" onclick="clearChat()" title="Clear Chat">🗑️</button>
+                    <button class="header-btn" onclick="closeChat()" title="Close">×</button>
+                </div>
+                <h3 class="header-title">👑 Royal School</h3>
+                <p class="header-subtitle">How can we help?</p>
             </div>
-            <button class="clear-btn" onclick="clearChat()">Clear Chat</button>
-            <h1>👑 Royal School</h1>
-            <p>School Information Assistant</p>
-        </div>
-
-        <div class="quick-buttons" id="quickButtons">
-            <p>Quick questions:</p>
-            <div class="button-grid">
-                <button class="quick-btn" onclick="askQuestion('Admissions Process')">📝 Admissions Process</button>
-                <button class="quick-btn" onclick="askQuestion('Academic Programs')">📚 Academic Programs</button>
-                <button class="quick-btn" onclick="askQuestion('School Calendar')">📅 School Calendar</button>
-                <button class="quick-btn" onclick="askQuestion('Contact Information')">📞 Contact Information</button>
-                <button class="quick-btn" onclick="askQuestion('School Hours')">🕒 School Hours</button>
-                <button class="quick-btn" onclick="askQuestion('Location')">📍 Location & Directions</button>
+            
+            <div class="quick-actions" id="quickActions">
+                <div class="actions-grid">
+                    <button class="quick-btn" onclick="ask('Admissions')">📝 Admissions</button>
+                    <button class="quick-btn" onclick="ask('Programs')">📚 Programs</button>
+                    <button class="quick-btn" onclick="ask('Fees')">💰 Fees</button>
+                    <button class="quick-btn" onclick="ask('Contact Information')">📞 Contact Information</button>
+                    <button class="quick-btn" onclick="ask('School Hours')">🕒 School Hours</button>
+                    <button class="quick-btn" onclick="ask('Location')">📍 Location & Directions</button>
+                </div>
             </div>
-        </div>
-
-        <div class="chat-messages" id="chatMessages">
-            <div class="message bot">
-                <div class="avatar bot-avatar">🤖</div>
-                <div>
-                    <div class="message-bubble">
-                        Welcome to Royal School! 👑 I'm here to help you with information about our school, admissions, academics, events, and more. How can I assist you today?
+            
+            <div class="chat-body" id="chatBody">
+                <div class="message bot">
+                    <div class="avatar bot-avatar">🤖</div>
+                    <div class="msg-bubble">
+                        Hi! I'm here to help with Royal School info. What would you like to know?
                     </div>
-                    <div class="timestamp" id="welcomeTime"></div>
+                </div>
+            </div>
+            
+            <div class="empty-chat" id="emptyChat">
+                <div style="font-size: 24px; margin-bottom: 8px;">💬</div>
+                <div>No messages yet.<br>Start a conversation!</div>
+            </div>
+            
+            <div class="typing" id="typing">
+                <div class="typing-dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+            
+            <div class="chat-input">
+                <div class="input-box">
+                    <textarea 
+                        class="input-field" 
+                        id="messageInput" 
+                        placeholder="Ask about admissions, fees..."
+                        rows="1"
+                        onkeydown="handleEnter(event)"
+                    ></textarea>
+                    <button class="send-btn" onclick="sendMessage()">➤</button>
                 </div>
             </div>
         </div>
-
-        <div class="typing" id="typingIndicator">
-            <div class="typing-dots">
-                <div class="typing-dot"></div>
-                <div class="typing-dot"></div>
-                <div class="typing-dot"></div>
-            </div>
-        </div>
-
-        <div class="input-area">
-            <div class="input-container">
-                <textarea 
-                    class="input-field" 
-                    id="messageInput" 
-                    placeholder="Ask about admissions, academics, events, or anything else about our school..."
-                    rows="1"
-                    onkeydown="handleKeyPress(event)"
-                ></textarea>
-                <button class="send-btn" id="sendButton" onclick="sendMessage()">➤</button>
-            </div>
-            <div class="footer-info">
-                📞 For immediate assistance: 085319 63686 | 📧 info@royalschool.edu
-            </div>
-        </div>
     </div>
+
     <script>
-      
-      function toggleChatbot() {
-  const chatbot = document.getElementById('chat-container');
-  if (chatbot.style.display === 'none' || chatbot.style.display === '') {
-    chatbot.style.display = 'block';
-  } else {
-    chatbot.style.display = 'none';
-  }
-}
-
-        // Initialize welcome time
-        document.getElementById('welcomeTime').textContent = new Date().toLocaleTimeString();
-
-        // API Key Management
-        let currentApiKey = 'rs_ak_7f8d9e2a1b3c4e5f6789abcdef012345';
-        let apiStats = {
-            totalQueries: 127,
-            todayQueries: 23,
-            activeKeys: 1
-        };
-
+        let isOpen = false;
+        let messageCount = 0;
+        
         // School knowledge base
-        const schoolInfo = {
-            'admission': "📝 ADMISSIONS PROCESS:\n\n• Application deadline: March 15th\n• Required documents: Birth certificate, previous school records, immunization records\n• Entrance exam for grades 6-12\n• Interview with parents and student\n• Application fee: ₹500\n\nWould you like to schedule a school tour?",
-            
-            'academic programs': "📚 ACADEMIC PROGRAMS:\n\nElementary (K-5): Core subjects, Art, Music, PE, Computer Science\nMiddle School (6-8): Advanced Math, Science Labs, Foreign Languages (Spanish/French)\nHigh School (9-12): AP courses, Dual enrollment, STEM program, Arts program\n\nWe maintain a 15:1 student-teacher ratio across all grades.",
-            
-            'school calendar': "📅 IMPORTANT DATES 2024-2025:\n\n• First Day: August 28, 2024\n• Fall Break: October 14-18\n• Winter Break: December 23 - January 8\n• Spring Break: March 24-28\n• Last Day: June 6, 2025\n• Graduation: June 8, 2025",
-            
-            'contact information': "📞 CONTACT INFORMATION:\n\n• Main Office: 085319 63686\n• Admissions: 085319 63687\n• Email: info@royalschool.edu\n• Website: www.royalschool.edu\n• Emergency Line: 085319 63688",
-            
-            'school hours': "🕒 SCHOOL HOURS:\n\n• Elementary: 9:15 AM - 3:00 PM\n• Middle/High School: 8:45 AM - 4:15 PM\n• Office Hours: 7:30 AM - 4:00 PM\n• After-school programs until 6:00 PM",
-            
-            'location': "📍 LOCATION:\nRoyal School\n5/86 G, 5th Street, Kothanagar\nKrishnapuram, Tamil Nadu 627011\n\nWe're conveniently located in Kothanagar, Krishnapuram with easy access to public transportation.",
-            
-            'fees': "💰 SCHOOL FEES (Annual):\n\n• Elementary (K-5): ₹80,500\n• Middle School (6-8): ₹100,200\n• High School (9-12): ₹180,800\n\nAdditional costs: Books (₹3000), Uniforms (₹2000), Activities (₹1500)\nFinancial aid available for qualified families.",
-            
-            'facilities': "🏫 OUR FACILITIES:\n\n• Modern classrooms with smart boards\n• Science and computer labs\n• Library and media center\n• Gymnasium and sports fields\n• Art and music studios\n• Cafeteria with healthy meal options\n• School bus transportation available",
-            
-            'events': "🎉 UPCOMING EVENTS:\n\n• Science Fair: March 15\n• Spring Concert: April 12\n• Open House: April 20\n• Sports Day: May 10\n• Art Exhibition: May 25\n\nCheck our website for the complete events calendar!"
+        const responses = {
+            admissions: "📝 ADMISSIONS:\n• Deadline: March 15th\n• Documents: Birth cert, records\n• Entrance exam grades 6-12\n• Fee: ₹500\n• Call: 085319 63687",
+            programs: "📚 PROGRAMS:\n• Elementary (K-5): Core + Arts\n• Middle (6-8): Advanced Math/Science\n• High School (9-12): AP, STEM\n• Ratio: 15:1",
+            fees: "💰 FEES:\n• Elementary: ₹80,500\n• Middle: ₹100,200\n• High School: ₹180,800\n• Books: ₹3000, Uniforms: ₹2000\n• Financial aid available",
+            "contact information": "📞 CONTACT INFORMATION:\n• Main Office: 085319 63686\n• Admissions: 085319 63687\n• Principal: 085319 63688\n• Email: info@royalschool.edu\n• Website: www.royalschool.edu\n• WhatsApp: +91 85319 63686",
+            contact: "📞 CONTACT INFORMATION:\n• Main Office: 085319 63686\n• Admissions: 085319 63687\n• Principal: 085319 63688\n• Email: info@royalschool.edu\n• Website: www.royalschool.edu\n• WhatsApp: +91 85319 63686",
+            "school hours": "🕒 SCHOOL HOURS:\n• Elementary (K-5): 9:15 AM - 3:00 PM\n• Middle School (6-8): 8:45 AM - 3:45 PM\n• High School (9-12): 8:45 AM - 4:15 PM\n• Office Hours: 7:30 AM - 4:30 PM\n• Saturday: 8:00 AM - 12:00 PM\n• Closed Sundays",
+            hours: "🕒 SCHOOL HOURS:\n• Elementary (K-5): 9:15 AM - 3:00 PM\n• Middle School (6-8): 8:45 AM - 3:45 PM\n• High School (9-12): 8:45 AM - 4:15 PM\n• Office Hours: 7:30 AM - 4:30 PM\n• Saturday: 8:00 AM - 12:00 PM\n• Closed Sundays",
+            location: "📍 LOCATION & DIRECTIONS:\n• Address: 5/86 G, 5th Street\n  Kothanagar, Krishnapuram 627011\n• Near: Krishnapuram Bus Stand\n• Landmarks: Next to City Bank\n• Parking: Available on campus\n• Bus Routes: 15, 22, 45\n• Auto Stand: 200m from gate",
+            directions: "📍 LOCATION & DIRECTIONS:\n• Address: 5/86 G, 5th Street\n  Kothanagar, Krishnapuram 627011\n• Near: Krishnapuram Bus Stand\n• Landmarks: Next to City Bank\n• Parking: Available on campus\n• Bus Routes: 15, 22, 45\n• Auto Stand: 200m from gate",
+            calendar: "📅 DATES:\n• First Day: Aug 28\n• Fall Break: Oct 14-18\n• Winter Break: Dec 23 - Jan 8\n• Spring Break: Mar 24-28\n• Last Day: June 6"
         };
 
-        function getCurrentTime() {
-            return new Date().toLocaleTimeString();
-        }
-
-        function generateRandomApiKey() {
-            const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
-            let result = 'rs_ak_';
-            for (let i = 0; i < 32; i++) {
-                result += chars.charAt(Math.floor(Math.random() * chars.length));
-            }
-            return result;
-        }
-
-        function openApiModal() {
-            document.getElementById('apiModal').style.display = 'flex';
-            updateApiStats();
-        }
-
-        function closeApiModal() {
-            document.getElementById('apiModal').style.display = 'none';
-        }
-
-        function updateApiStats() {
-            document.getElementById('totalQueries').textContent = apiStats.totalQueries;
-            document.getElementById('todayQueries').textContent = apiStats.todayQueries;
-            document.getElementById('activeKeys').textContent = apiStats.activeKeys;
-            document.getElementById('currentApiKey').textContent = currentApiKey;
-        }
-
-        function generateApiKey() {
-            const description = document.getElementById('keyDescription').value || 'Generated key';
-            currentApiKey = generateRandomApiKey();
-            apiStats.activeKeys = 1;
+        function toggleChat() {
+            const chat = document.getElementById('widgetChat');
+            const notification = document.getElementById('notification');
             
-            updateApiStats();
+            isOpen = !isOpen;
             
-            // Show success message
-            const bubble = document.createElement('div');
-            bubble.innerHTML = `✅ New API key generated successfully!<br><strong>${currentApiKey}</strong>`;
-            bubble.style.cssText = 'position:fixed;top:20px;right:20px;background:#28a745;color:white;padding:15px;border-radius:8px;z-index:9999;';
-            document.body.appendChild(bubble);
-            
-            setTimeout(() => {
-                document.body.removeChild(bubble);
-            }, 3000);
-            
-            document.getElementById('keyDescription').value = '';
-        }
-
-        function revokeApiKey() {
-            if (confirm('Are you sure you want to revoke the current API key? This action cannot be undone.')) {
-                currentApiKey = 'No active key';
-                apiStats.activeKeys = 0;
-                updateApiStats();
-                updateApiStatus(false);
-                
-                // Show warning message
-                const bubble = document.createElement('div');
-                bubble.innerHTML = '⚠️ API key revoked. Generate a new key to continue using the API.';
-                bubble.style.cssText = 'position:fixed;top:20px;right:20px;background:#dc3545;color:white;padding:15px;border-radius:8px;z-index:9999;';
-                document.body.appendChild(bubble);
-                
-                setTimeout(() => {
-                    document.body.removeChild(bubble);
-                }, 3000);
-            }
-        }
-
-        function updateApiStatus(isActive = true) {
-            const statusDot = document.getElementById('statusDot');
-            const statusText = document.getElementById('statusText');
-            
-            if (isActive && apiStats.activeKeys > 0) {
-                statusDot.classList.remove('inactive');
-                statusText.textContent = 'API Active';
+            if (isOpen) {
+                chat.classList.add('show');
+                notification.style.display = 'none';
+                document.getElementById('messageInput').focus();
             } else {
-                statusDot.classList.add('inactive');
-                statusText.textContent = 'API Inactive';
+                chat.classList.remove('show');
             }
         }
 
-        function logApiUsage() {
-            apiStats.totalQueries++;
-            apiStats.todayQueries++;
-            
-            // Simulate API rate limiting
-            if (apiStats.todayQueries > 100) {
-                return false; // Rate limit exceeded
-            }
-            
-            return true; // Request allowed
+        function closeChat() {
+            document.getElementById('widgetChat').classList.remove('show');
+            isOpen = false;
         }
 
-        function addMessage(text, isUser = false) {
-            const chatMessages = document.getElementById('chatMessages');
+        function clearChat() {
+            const chatBody = document.getElementById('chatBody');
+            const emptyChat = document.getElementById('emptyChat');
+            const quickActions = document.getElementById('quickActions');
+            
+            // Clear all messages
+            chatBody.innerHTML = '';
+            messageCount = 0;
+            
+            // Show empty state
+            chatBody.style.display = 'none';
+            emptyChat.style.display = 'block';
+            quickActions.style.display = 'block';
+            
+            // Reset to initial state after a moment
+            setTimeout(() => {
+                chatBody.style.display = 'block';
+                emptyChat.style.display = 'none';
+                
+                // Add welcome message back
+                addMessage("Hi! I'm here to help with Royal School info. What would you like to know?", false, true);
+            }, 800);
+        }
+
+        function addMessage(text, isUser = false, isWelcome = false) {
+            const chatBody = document.getElementById('chatBody');
             const messageDiv = document.createElement('div');
             messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
             
@@ -778,128 +624,94 @@
                 <div class="avatar ${isUser ? 'user-avatar' : 'bot-avatar'}">
                     ${isUser ? '👤' : '🤖'}
                 </div>
-                <div>
-                    <div class="message-bubble">${text.replace(/\n/g, '<br>')}</div>
-                    <div class="timestamp">${getCurrentTime()}</div>
-                </div>
+                <div class="msg-bubble">${text.replace(/\n/g, '<br>')}</div>
             `;
             
-            chatMessages.appendChild(messageDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
+            chatBody.appendChild(messageDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+            
+            if (!isWelcome) {
+                messageCount++;
+            }
         }
 
         function showTyping() {
-            document.getElementById('typingIndicator').style.display = 'block';
-            const chatMessages = document.getElementById('chatMessages');
-            chatMessages.scrollTop = chatMessages.scrollHeight;
+            document.getElementById('typing').style.display = 'block';
+            document.getElementById('chatBody').scrollTop = document.getElementById('chatBody').scrollHeight;
         }
 
         function hideTyping() {
-            document.getElementById('typingIndicator').style.display = 'none';
+            document.getElementById('typing').style.display = 'none';
         }
 
-        function getBotResponse(question) {
-            // Check API rate limiting
-            if (!logApiUsage()) {
-                return "⚠️ API rate limit exceeded. Please try again later or contact our office directly at 085319 63686.";
-            }
+        function getResponse(query) {
+            const q = query.toLowerCase();
             
-            const lowerQuestion = question.toLowerCase();
-            
-            // Check for matches in knowledge base
-            for (const [key, response] of Object.entries(schoolInfo)) {
-                if (lowerQuestion.includes(key)) {
+            for (const [key, response] of Object.entries(responses)) {
+                if (q.includes(key) || q.includes(key.slice(0, -1))) {
                     return response;
                 }
             }
             
-            // Default responses
-            const defaults = [
-                "That's a great question! For specific information, please contact our main office at 085319 63686 or email info@royalschool.edu.",
-                "I'd be happy to help you find that information! You can visit our main office during school hours (7:30 AM - 4:00 PM).",
-                "For detailed information about that topic, please contact our admissions office at 085319 63687.",
-                "That's an excellent question! Our staff can provide specific details. Please call 085319 63686."
-            ];
-            
-            return defaults[Math.floor(Math.random() * defaults.length)];
+            return "Thanks for your question! For detailed info, call 085319 63686 or email info@royalschool.edu. Office hours: 7:30 AM - 4:00 PM.";
         }
 
-        function askQuestion(question) {
-            document.getElementById('quickButtons').style.display = 'none';
-            addMessage(question, true);
+        function ask(topic) {
+            document.getElementById('quickActions').style.display = 'none';
+            addMessage(topic, true);
             
             showTyping();
             setTimeout(() => {
                 hideTyping();
-                const response = getBotResponse(question);
-                addMessage(response);
-            }, 1000 + Math.random() * 1500);
+                addMessage(getResponse(topic));
+            }, 500 + Math.random() * 600);
         }
 
         function sendMessage() {
             const input = document.getElementById('messageInput');
-            const question = input.value.trim();
+            const message = input.value.trim();
             
-            if (!question) return;
+            if (!message) return;
             
-            // Check if API is active
-            if (apiStats.activeKeys === 0) {
-                addMessage("⚠️ API service is currently inactive. Please contact the administrator.", false);
-                return;
-            }
-            
-            document.getElementById('quickButtons').style.display = 'none';
-            addMessage(question, true);
+            document.getElementById('quickActions').style.display = 'none';
+            addMessage(message, true);
             input.value = '';
+            input.style.height = 'auto';
             
             showTyping();
             setTimeout(() => {
                 hideTyping();
-                const response = getBotResponse(question);
-                addMessage(response);
-            }, 1000 + Math.random() * 1500);
+                addMessage(getResponse(message));
+            }, 500 + Math.random() * 600);
         }
 
-        function handleKeyPress(event) {
-            if (event.key === 'Enter' && !event.shiftKey) {
-                event.preventDefault();
+        function handleEnter(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
                 sendMessage();
             }
         }
 
-        function clearChat() {
-            const chatMessages = document.getElementById('chatMessages');
-            chatMessages.innerHTML = `
-                <div class="message bot">
-                    <div class="avatar bot-avatar">🤖</div>
-                    <div>
-                        <div class="message-bubble">
-                            Welcome to Royal School! 👑 I'm here to help you with information about our school, admissions, academics, events, and more. How can I assist you today?
-                        </div>
-                        <div class="timestamp">${getCurrentTime()}</div>
-                    </div>
-                </div>
-            `;
-            document.getElementById('quickButtons').style.display = 'block';
-        }
+        // Auto-resize textarea
+        document.getElementById('messageInput').addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = Math.min(this.scrollHeight, 40) + 'px';
+        });
 
-        // Initialize API status
-        updateApiStatus();
-        
-        // Close modal when clicking outside
-        document.getElementById('apiModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeApiModal();
+        // Show notification after 3 seconds
+        setTimeout(() => {
+            if (!isOpen) {
+                document.getElementById('notification').style.display = 'flex';
+            }
+        }, 3000);
+
+        // Close on outside click
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.royal-widget') && isOpen) {
+                closeChat();
             }
         });
     </script>
 </body>
 </html>
-</div>
-
-<script src="api/chat.js"></script> <!-- Chatbot UI copied here -->
-
-
-<!-- ✅ Chatbot Widget End -->
-</body>
 </html>
