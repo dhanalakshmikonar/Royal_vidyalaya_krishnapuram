@@ -436,13 +436,5 @@ footer {
     left: 0;
     width: 100%;
   }
-
-  #menu-toggle {
-    display: block;
-  }
-
-  nav ul.show {
-    display: flex;
-  }
 }
 
