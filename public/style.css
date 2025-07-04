@@ -438,3 +438,47 @@ footer {
   }
 }
 
+.social-links {
+  margin-top: 15px;
+}
+
+.social-links a {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.icon {
+  transition: transform 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f9ff;
+  color: #333;
+}
+
+.event {
+  text-align: center;
+  padding: 30px 20px 10px;
+  background: #a5d6a7;
+  color: #fff;
+}
+
+.yoga-section h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #004e92;
+  border-bottom: 2px solid #f1c40f;
+  display: inline-block;
+  padding-bottom: 5px;
+}
