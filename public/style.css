@@ -368,6 +368,10 @@ body {
   color: #333;
   transition: opacity 0.3s ease;
 }
+.academic-content {
+  transition: all 0.3s ease-in-out;
+}
+
 
 
 

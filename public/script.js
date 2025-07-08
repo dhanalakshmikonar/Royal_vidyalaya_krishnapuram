@@ -77,6 +77,28 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+  // Hide all contents on page load
+  window.addEventListener('DOMContentLoaded', function () {
+    const cards = document.querySelectorAll('.academic-card');
+
+    cards.forEach(card => {
+      const content = card.querySelector('.academic-content');
+      content.style.display = 'none'; // hide all initially
+
+      card.addEventListener('click', () => {
+        // Toggle only the clicked card
+        const isVisible = content.style.display === 'block';
+
+        // First hide all
+        document.querySelectorAll('.academic-content').forEach(c => c.style.display = 'none');
+
+        // Then toggle the clicked one
+        content.style.display = isVisible ? 'none' : 'block';
+      });
+    });
+  });
+
+
 
 
 
