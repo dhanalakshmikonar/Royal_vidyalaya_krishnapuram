@@ -1,4 +1,9 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+?>
+
+<?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get and sanitize input
     $name    = htmlspecialchars(trim($_POST["name"]));
