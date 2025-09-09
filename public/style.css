@@ -532,3 +532,62 @@ body {
   display: inline-block;
   padding-bottom: 5px;
 }
+
+.academic-card {
+  position: relative;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.academic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.academic-content {
+  display: none;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #131313;
+}
+
+.academic-card.active .academic-content {
+  display: block;
+}
+
+.coming-soon {
+  opacity: 0.85;
+  filter: blur(0.3px);
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  color: #666;
+  pointer-events: none; /* disable clicking */
+}
+
+.coming-soon h3 {
+  color: #1e1e1e;
+}
+
+.coming-soon .overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(255,255,255,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #0c0c0c;
+  border-radius: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  pointer-events: none;
+}
+
