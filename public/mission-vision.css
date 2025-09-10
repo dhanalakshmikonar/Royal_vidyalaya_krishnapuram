@@ -15,22 +15,61 @@ html, body {
   margin-top: 40px;
 }
 
-.mv-toggle-buttons button {
-  background: white;
-  border: 2px solid #800020;
-  color: #800020;
-  font-weight: 600;
-  padding: 10px 25px;
-  margin: 0 10px;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: 0.3s;
+.mv-toggle-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
 }
 
-.mv-toggle-buttons button:hover {
-  background-color: #800020;
-  color: white;
+.mv-toggle-buttons button {
+    background-color: rgba(128, 0, 32, 0.85); /* your theme color */
+    color: white;
+    border: none;
+    border-radius: 30px; /* pill-shaped */
+    padding: 12px 35px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 15px rgba(128, 0, 32, 0.4); /* subtle shadow */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
 }
+
+/* Hover effect */
+.mv-toggle-buttons button:hover {
+    background-color: rgba(128, 0, 32, 1); /* darker on hover */
+    box-shadow: 0 8px 20px rgba(128, 0, 32, 0.6); /* stronger shadow */
+    transform: translateY(-3px);
+}
+
+/* Optional glow animation effect */
+.mv-toggle-buttons button::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.mv-toggle-buttons button:hover::after {
+    opacity: 1;
+    transform: rotate(45deg);
+}
+
+/* Active button (if toggled via JS) */
+.mv-toggle-buttons button.active {
+    background-color: rgba(128, 0, 32, 1);
+    box-shadow: 0 8px 20px rgba(128, 0, 32, 0.6);
+}
+
 
 .mv-wrapper {
   position: relative;
