@@ -7,25 +7,43 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="logo">Royal Vidyalaya</div>
-    <button class="hamburger" id="hamburger">&#9776;</button>
-    <nav class="nav-links" id="navLinks">
-      <a href="#home">Home</a>
-      <a href="#about">About Us</a>
-      <a href="#Event">Event</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#Academics">Academics</a>
-      <a href="#Notice">Notice</a>
-      <a href="#contact">Contact Us</a>
-    </nav>
-  </header>
+  <!-- Event Ticker (Top Bar) -->
+<section class="event-ticker" role="region" aria-label="Latest events">
+  <div class="ticker-track">
+    <ul class="ticker-list">
+      <li>Annual day event</li>
+      <li>Semester exams scheduled</li>
+      <li>Sports day inauguration</li>
+      <li>Parents teachers meet</li>
+      <li>Sports day activities</li>
+    </ul>
+  </div><br><br><br>
+</section>
+
+<!-- Header with Logo + Hamburger + Navigation -->
+<header>
+  <div class="logo">Royal Vidyalaya</div>
+  
+  <!-- Hamburger below ticker -->
+  <button class="hamburger" id="hamburger">&#9776;</button>
+  
+  <!-- Navigation Menu -->
+  <nav class="nav-links" id="navLinks">
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#Event">Event</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#academics">Academics</a>
+    <a href="#contact">Contact Us</a>
+  </nav>
+</header>
+     
 
     <script src="script.js"></script>
   <section id="home" class="full-screen">
     <div class="home-content">
-      <h1>Welcome to Royal Vidyalaya</h1>
-      <p> It's the leaders' domain</p>
+      <h1 style="color: whitesmoke;">Welcome to Royal Vidyalaya</h1>
+      <p style="color: wheat;"> It's the leaders' domain</p>
       <a href="#about" class="btn">Learn More</a>
     </div>
   </section>
@@ -46,6 +64,22 @@
   </div>
 </section><br><br>
 
+<section class="principal-desk">
+ <div class="principal-content">
+  <h2>From the Principal's Desk</h2>
+  <p class="intro">Welcome to Royal Vidyalaya! Our motto is to nurture young minds into responsible, confident, and well-rounded individuals through holistic education and values-based learning. We strive to create an atmosphere where discipline, respect, and compassion form the foundation of every child’s growth.</p>
+  
+  <p class="intro">At Royal Vidyalaya, we strongly believe in upholding cultural values and ethical principles that guide our students toward becoming responsible citizens of tomorrow. Beyond academics, we emphasize character building, good behaviour, and a sense of integrity that will stay with them throughout their lives. Our dedicated faculty inspire students to embrace these values with enthusiasm and pride.</p>
+  
+  <p class="intro">We also foster a healthy and encouraging learning environment where creativity, teamwork, and positive thinking thrive. By balancing knowledge with wisdom, discipline with freedom, and tradition with modernity, we ensure that every student develops into a confident, compassionate, and socially responsible individual ready to contribute meaningfully to society.</p>
+</div>
+
+  <div class="principal-image">
+    <img src="images/principal2.JPG" alt="Principal of Royal Vidyalaya">
+  </div>
+</section>
+
+
 <link rel="stylesheet" href="mission-vision.css">
 <div class="mv-toggle-buttons">
   <button id="btn-mission">Mission</button>
@@ -55,20 +89,20 @@
 <div class="mv-wrapper">
   <div class="mv-slide mv-mission active">
     <center>
-    <h2>Mission</h2>
+    <h1>Mission</h1><br>
+    </center><center>
     <p>
-      “Learn To Lead” is the motto of this educational institution which provides the wholesome education. Our curriculum is specially designed to give them a chance to discover and develop their talents and express them through multidisciplinary works. Every individual child will be able to lead the nation through our education.
+  “At Royal Vidyalaya, our mission is to create a learning environment where every child feels valued, inspired, and empowered to achieve excellence. We strive to nurture curiosity, creativity, and critical thinking through a balanced blend of academics, co-curricular activities, and life skills education. Guided by the principles of integrity, discipline, and respect, we are committed to shaping responsible global citizens who uphold moral values while embracing modern knowledge and innovation. Our mission is to ensure that every student emerges with confidence, compassion, and the competence to face the challenges of the future and contribute positively to society.”
     </p>
     </center>
   </div>
 
   <div class="mv-slide mv-vision">
     <center>
-    <h2>Our Vision</h2>
+    <h1>Our Vision</h1><br></center><center>
     <p>
-      Our vision is to shape the creative people of tomorrow’s world with rich values and culture blended with good academics. We hope our children face life’s challenges and build a successful life of their own
-    </p>
-    </center>
+     “At Royal Vidyalaya, our vision is to cultivate a generation of learners who are academically proficient, ethically strong, and socially responsible. We aspire to provide world-class education that blends traditional values with modern innovation, preparing students to succeed not only in examinations but in life. Our vision is to create a vibrant learning ecosystem where curiosity is celebrated, creativity is nurtured, and leadership is encouraged. We seek to empower every child to discover their unique potential, embrace lifelong learning, and contribute meaningfully to their community, the nation, and the world. By fostering an environment of respect, inclusivity, and excellence, Royal Vidyalaya aims to stand as a beacon of knowledge, character, and progress in the field of education.”
+        </p></center>
   </div>
 </div>
 
@@ -104,7 +138,7 @@
     <div class="gallery-item"><img src="images/DSC00026.JPG" alt="Event 2"></div>
     <div class="gallery-item"><img src="images/view.JPG" alt="Event 3"></div>
     <div class="gallery-item tall"><img src="images/corridoor.JPG" alt="Event 4"></div>
-    <div class="gallery-item wide"><img src="images/school1.jpg" alt="Event 5"></div>
+    <div class="gallery-item wide"><img src="images/principal.JPG" alt="Event 5"></div>
     <div class="gallery-item"><img src="images/teach.JPG" alt="Event 6"></div>
     <div class="gallery-item"><img src="images/activity.JPG" alt="Event 7"></div>
     <div class="gallery-item"><img src="images/princy.JPG" alt="Event 8"></div>
@@ -115,52 +149,55 @@
 
   </section>
 
-  <section class="academics-section" id="Academics">
-    
-    <h2>Academics</h2>
-    <p class="intro">Our academic programs are designed to provide all-round development and prepare students for a bright future.</p>
+<section id="academics" class="academics-section" id="academics">
+  <h2 class="section-title">Academics</h2>
+  <p class="section-subtitle">Nurturing young minds with balanced learning for a brighter tomorrow</p>
 
+  <div class="academics-grid">
+    <!-- Nursery -->
     <div class="academic-card" onclick="toggleContent(this)">
-  <h3>Nursery</h3>
-  <div class="academic-content">
-    <p>Encourages curiosity and creativity through fun learning methods. Activities include drawing, coloring, singing, basic number concepts, and introduction to alphabets.</p>
-  </div>
-</div>
-
-<div class="academic-card" onclick="toggleContent(this)">
-  <h3>Pre-Primary</h3>
-  <div class="academic-content">
-    <p>Introduction to early learning with emphasis on play-based activities, storytelling, rhymes, and motor skill development. Focus on social, emotional, and language growth.</p>
-  </div>
-</div>
-
-    <div class="academic-card" onclick="toggleContent(this)">
-      <h3>Primary School (Class I - V)</h3>
+      <img src="images/nursery1.jpg" alt="Nursery">
+      <h3>Nursery</h3>
       <div class="academic-content">
-        <p>Focus on foundational learning through interactive methods and continuous evaluation. Subjects include English, Math, EVS, Hindi, and Art.</p>
+        <p style="color: black;">Our Nursery program provides joyful early learning experiences focusing on curiosity, play, and social growth.</p>
       </div>
     </div>
 
-  
-<!-- Secondary - Coming Soon -->
-<div class="academic-card coming-soon" onclick="toggleContent(this)">
-  <h3>Secondary School (Class VI - X)</h3>
-  <div class="academic-content">
-    <p>🚀 This section is under development!  
-       Secondary curriculum details will be available soon with advanced subjects and holistic growth opportunities.</p>
-  </div>
-  <div class="overlay">✨ Coming Soon ✨</div>
-</div>
+    <!-- Pre-Primary -->
+    <div class="academic-card" onclick="toggleContent(this)">
+      <img src="images/pre-primary1.jpg" alt="Pre-Primary">
+      <h3>Pre-Primary</h3>
+      <div class="academic-content">
+        <p style="color: black;">Play-based learning that encourages creativity, imagination, and foundational skills for lifelong learning.</p>
+      </div>
+    </div>
 
-<!-- Senior Secondary - Coming Soon -->
-<div class="academic-card coming-soon" onclick="toggleContent(this)">
-  <h3>Senior Secondary School (Class XI - XII)</h3>
-  <div class="academic-content">
-    <p>📚 Exciting content on streams like Science, Commerce, and Arts will be available shortly.  
-       Stay tuned for updates!</p>
+    <!-- Primary -->
+    <div class="academic-card" onclick="toggleContent(this)">
+      <img src="images/primary.jpg" alt="Primary School">
+      <h3>Primary (Class I - V)</h3>
+      <div class="academic-content">
+        <p style="color: black;">Interactive methods and continuous evaluation build strong foundations in English, Math, EVS, Hindi, and Art.</p>
+      </div>
+    </div>
+
+    <!-- Secondary + Senior Secondary (Coming Soon) -->
+    <div class="academic-card coming-soon">
+      <img src="images/secondary.jpg" alt="Secondary & Senior Secondary">
+      <h1 style="color: black;">🚀 Coming Soon</h1>
+      <h3>Secondary & Senior Secondary</h3>
+      <div class="academic-content">
+        <p style="color: black;">🚀 Coming Soon</p>
+      </div>
+    </div>
   </div>
-  <div class="overlay">🔒 Yet to Come</div>
-</div>
+</section>
+
+<script src="academics.js"></script>
+<link rel="stylesheet" href="academics.css">
+  
+
+
 
     
     </div>
@@ -169,44 +206,12 @@
 
   
 
-  <section id="Notice" class="card">
-      <center><h2>Notice Board</h2></center>
-      <ul>
-        <li>📌 School reopens on 17th June.</li>
-        <li>📌 Parent-teacher meeting on 22nd June.</li>
-        <li>📌 Science Exhibition on 28th June.</li>
-      </ul>
-    </section>
-
-    <section id="events" class="card">
-      <h2>Upcoming Events</h2>
-      <table>
-        <thead>
-          <tr><th>Date</th><th>Event</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>17 Jun</td><td>School Reopening</td></tr>
-          <tr><td>22 Jun</td><td>PTM (Grades 1–10)</td></tr>
-          <tr><td>28 Jun</td><td>Science Exhibition</td></tr>
-          <tr><td>10 July</td><td>Guru Purnima</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section id="admissions" class="card">
-      <h2>Admission Types</h2>
-      <ul>
-        <li>🧒 Kindergarten</li>
-        <li>📘 Primary School (Grades 1–5)</li>
-        
-      </ul>
-    </section><br><br>
-  </main>
+  
 
   <script src="trial.js"></script>
 
     <section class="contact-section" id="contact">
-    <center><h1 class="section-title" id="contact">Contact Us</h1></center><br>
+    <center><h1 class="section-title" id="contact" style="color: black;">Contact Us</h1></center><br>
 
 
     <!-- Map and Address -->
@@ -256,7 +261,7 @@
     <!-- ✅ Inline SVG Icons -->
     <div class="social-links">
         <!-- Facebook Attractive Icon -->
-<a href="https://www.facebook.com/share/1ArMgFn4MB/" target="_blank" aria-label="Facebook">
+<a href="https://www.facebook.com/profile.php?id=61580203445064" target="_blank" aria-label="Facebook">
   <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 512 512">
     <circle cx="256" cy="256" r="256" fill="#1877f2"/>
     <path d="M353.3 330.7l11.7-76.1h-73.4v-49.4c0-20.8 10.2-41.1 42.9-41.1h33.2v-64.9s-30.2-5.2-59.1-5.2c-60.3 0-99.8 36.5-99.8 102.6v58h-67v76.1h67v183.7c13.4 2.1 27.1 3.2 41 3.2s27.6-1.1 41-3.2V330.7h61.5z" fill="#fff"/>
@@ -270,6 +275,23 @@
           <path d="M23.498 6.186a2.999 2.999 0 0 0-2.112-2.121C19.766 3.5 12 3.5 12 3.5s-7.766 0-9.386.565A3 3 0 0 0 .502 6.186 31.716 31.716 0 0 0 0 12a31.716 31.716 0 0 0 .502 5.814 2.999 2.999 0 0 0 2.112 2.121C4.234 20.5 12 20.5 12 20.5s7.766 0 9.386-.565a2.999 2.999 0 0 0 2.112-2.121A31.716 31.716 0 0 0 24 12a31.716 31.716 0 0 0-.502-5.814zM9.75 15.02V8.98l6.25 3.02-6.25 3.02z"/>
         </svg>
       </a>
+
+  <!-- Instagram (plain icon, no circle) -->
+<a href="https://www.instagram.com/royal_vidyalaya_tirunelveli/" target="_blank" aria-label="Instagram">
+  <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="#E4405F" viewBox="0 0 24 24" width="30" height="30">
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.342 3.608 1.317.975.975 1.255 2.242 1.317 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.342 2.633-1.317 3.608-.975.975-2.242 1.255-3.608 1.317-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.342-3.608-1.317-.975-.975-1.255-2.242-1.317-3.608C2.175 15.747 2.163 15.367 2.163 12s.012-3.584.07-4.85c.062-1.366.342-2.633 1.317-3.608C4.525 2.505 5.792 2.225 7.158 2.163 8.424 2.105 8.804 2.163 12 2.163zm0-2.163C8.756 0 8.334 0 7.052.07 5.775.137 4.624.454 3.678 1.4 2.732 2.346 2.415 3.497 2.348 4.774 2.278 6.056 2.278 6.478 2.278 12c0 5.522 0 5.944.07 7.226.067 1.277.384 2.428 1.33 3.374.946.946 2.097 1.263 3.374 1.33 1.282.07 1.704.07 7.226.07s5.944 0 7.226-.07c1.277-.067 2.428-.384 3.374-1.33.946-.946 1.263-2.097 1.33-3.374.07-1.282.07-1.704.07-7.226s0-5.944-.07-7.226c-.067-1.277-.384-2.428-1.33-3.374-.946-.946-2.097-1.263-3.374-1.33C17.944 0 17.522 0 12 0z"/>
+    <path d="M12 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998z"/>
+  </svg>
+</a>
+
+
+<!-- X / Twitter -->
+<a href="https://x.com/Royalvidayala" target="_blank" aria-label="X">
+  <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="#1DA1F2" viewBox="0 0 24 24" width="30" height="30">
+    <path d="M23.954 4.569c-.885.392-1.83.656-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.708.869 3.213 2.188 4.096-.807-.026-1.566-.247-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.317 0-.626-.03-.928-.086.627 1.956 2.444 3.377 4.6 3.418-1.68 1.318-3.809 2.105-6.115 2.105-.398 0-.79-.023-1.175-.068 2.179 1.396 4.768 2.212 7.557 2.212 9.054 0 14.002-7.496 14.002-13.986 0-.21 0-.423-.015-.634.962-.695 1.797-1.562 2.457-2.549z"/>
+  </svg>
+</a>
+
     </div>
   </section>
 </center>

@@ -1,13 +1,83 @@
 /* Header Base Styles */
+/* --- Event Ticker Styles --- */
+.event-ticker {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 40px;
+    background: linear-gradient(to right, #003366, #004080);
+  border-bottom: 1px solid #e5e7eb;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  font: 600 14px/1 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.ticker-track {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: max-content;
+  animation: ticker-scroll 35s linear infinite;
+}
+
+.event-ticker:hover .ticker-track,
+.event-ticker:focus-within .ticker-track {
+  animation-play-state: paused;
+}
+
+.ticker-list {
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.ticker-list li {
+  display: inline-block;
+  padding: 0 2rem;
+  line-height: 40px;
+  white-space: nowrap;
+}
+
+/* Seamless infinite scroll */
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .event-ticker { height: 36px; }
+  .ticker-list li {
+    line-height: 36px;
+    padding: 0 1rem;
+    font-size: 13px;
+  }
+}
+
+
 header {
   background: linear-gradient(to right, #003366, #004080);
   color: white;
   padding: 15px 20px;
+  margin-top: 2%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
   z-index: 1000;
+  height: 80px;
+  padding-right: 100px;
 }
 
 /* Logo */
@@ -136,7 +206,7 @@ header {
 
 .full-screen {
   height: 100vh;
-  background: url('images/untitled_image.jpg') no-repeat center center/cover;
+  background: url('images/bg1.png') no-repeat center center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -175,7 +245,8 @@ header {
 }
 
 .about-section {
-  background: url('images/about.jpg') no-repeat center center/cover;
+  background: url('images/about1.png') no-repeat center center/cover;
+   background-size: 100% 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -230,6 +301,7 @@ body {
   padding: 60px 30px;
   background: #f7f9fc;
   text-align: center;
+   scroll-behavior: smooth;
 }
 
 .gallery-title {
@@ -438,59 +510,6 @@ body {
   padding: 0;
 }
 
-.academics-section {
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 20px;
-  background: #ffffff;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  border-radius: 12px;
-}
-
-.academics-section h2 {
-  text-align: center;
-  color: #2c3e50;
-  margin-bottom: 10px;
-}
-
-.intro {
-  text-align: center;
-  color: #555;
-  margin-bottom: 30px;
-}
-
-.academic-card {
-  background: #e3f2fd;
-  margin-bottom: 15px;
-  padding: 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.2s ease, background 0.3s ease;
-}
-
-.academic-card:hover {
-  background: #bbdefb;
-  transform: scale(1.01);
-}
-
-.academic-card h3 {
-  margin: 0;
-  color: #0d47a1;
-}
-
-.academic-content {
-  margin-top: 10px;
-  display: none;
-  color: #333;
-  transition: opacity 0.3s ease;
-}
-.academic-content {
-  transition: all 0.3s ease-in-out;
-}
-
-
-
-
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #f9f9f9;
@@ -661,3 +680,66 @@ body {
   pointer-events: none;
 }
 
+.principal-desk {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f9f5f2; /* soft background */
+  padding: 60px 10%;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.principal-content {
+  flex: 1 1 500px;
+}
+
+.principal-content h2 {
+  font-family: 'Georgia', serif;
+  font-size: 2.5rem;
+  color: #800020; /* deep maroon for elegance */
+  margin-bottom: 20px;
+}
+
+.principal-content .intro {
+  font-size: 1.15rem;
+  color: #333;
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.principal-content p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+
+.principal-image {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.principal-image img {
+  width: 100%;
+  width: 600px;
+  height: 600px;     /* custom height */
+  border-radius: 15px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+  object-fit: cover; /* keeps image neat without stretching */
+}
+
+
+
+
+@media (max-width: 900px) {
+  .principal-desk {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .principal-image img {
+    margin-bottom: 20px;
+  }
+}
