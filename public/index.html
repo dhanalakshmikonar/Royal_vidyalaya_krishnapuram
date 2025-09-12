@@ -5,12 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Royal Vidyalaya</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Favicon -->
+<link rel="icon" type="image/png" href="images/favicon.png">
+
 </head>
 <body>
   <!-- Event Ticker (Top Bar) -->
 <section class="event-ticker" role="region" aria-label="Latest events">
   <div class="ticker-track">
     <ul class="ticker-list">
+      <li>Inauguration day celebrations</li>
       <li>Annual day event</li>
       <li>Semester exams scheduled</li>
       <li>Sports day inauguration</li>
@@ -108,25 +114,62 @@
 
 <script src="mission-vision.js"></script>
 
-<link rel="stylesheet"href="event.css">
- <section class="yoga-section"id="Event" >
-    <h1>Events at Royal Vidyalaya</h1>
-    <h3>🧘‍♀ Yoga Day Celebration at Royal Vidyalaya School | Embracing Wellness & Harmony 🧘‍♂</h3>
-    <p class="description">
-     "Royal Vidyalaya celebrated International Yoga Day with great spirit and unity. Our students actively participated in various yoga asanas and breathing exercises under the guidance of dedicated teachers, promoting physical health, inner strength,  mental peace, and mindfulness. The event emphasized the importance of incorporating yoga into daily life for a healthier and balanced lifestyle."
-    </p>
+<link rel="stylesheet" href="event.css">
 
-    <div class="gallery">
-      <div class="img-box"><img src="images/yoga1.jpg" alt="Yoga Day 1" /></div>
-      <div class="img-box"><img src="images/yoga2.jpg" alt="Yoga Day 2" /></div>
-      <div class="img-box"><img src="images/yoga3.jpg" alt="Yoga Day 3" /></div>
-      <div class="img-box"><img src="images/yoga4.jpg" alt="Yoga Day 4" /></div>
+<section class="yoga-section" id="Event">
+  <h1>Events at Royal Vidyalaya</h1>
+  <h3 class="description">
+    Celebrating Our Students' Talents,<br>
+    Showcasing Creativity & Sportsmanship,<br>
+    Embracing Holistic Development & Fun
+  </h3>
+   <div class="gallery">
+    <div class="img-box" onclick="toggleDescription(this)">
+      <img src="images/yoga1.jpg" alt="Sports Day">
+      <div class="title">Sports Day Celebration</div>
+      <div class="description">
+        Our students participated in various athletic activities promoting teamwork, fitness, and sportsmanship.
+      </div>
     </div>
-  </section>
+    <div class="img-box" onclick="toggleDescription(this)">
+      <img src="images/yoga2.jpg" alt="Cultural Fest">
+      <div class="title">Inauguration Day</div>
+      <div class="description">
+        A vibrant display of dance, music, and art showcasing students' creativity and talents.
+      </div>
+    </div>
+    <div class="img-box" onclick="toggleDescription(this)">
+      <img src="images/yoga3.jpg" alt="Science Exhibition">
+      <div class="title">Science Exhibition</div>
+      <div class="description">
+        Innovative projects and experiments presented by students demonstrating scientific curiosity and knowledge.
+      </div>
+    </div>
+    <div class="img-box" onclick="toggleDescription(this)">
+      <img src="images/yoga4.jpg" alt="Yoga Day">
+      <div class="title">Yoga Day Celebration</div>
+      <div class="description">
+        Students performed yoga asanas and mindfulness activities promoting health, balance, and inner peace.
+      </div>
+    </div>
+    <div class="img-box" onclick="toggleDescription(this)">
+      <img src="images/yoga1.jpg" alt="Art Competition">
+      <div class="title">Art Competition</div>
+      <div class="description">
+        Creative artworks from students displayed imagination, skill, and artistic expression.
+      </div>
+    </div>
+    <div class="img-box" onclick="toggleDescription(this)">
+      <img src="images/yoga3.jpg"alt="Music Day">
+      <div class="title">Cultural Program</div>
+      <div class="description">
+         Our Cultural Program celebrated the rich traditions and talents of our students through dance, music, drama, and creative performances, fostering cultural awareness and artistic expression.
+      </div>
+    </div>
+  </div>
+</section>
 
-  <script src="event.js"></script>
-
-
+<script src="event.js"></script>
 
 
   <section class="gallery-section" id="gallery">
@@ -141,7 +184,7 @@
     <div class="gallery-item wide"><img src="images/principal.JPG" alt="Event 5"></div>
     <div class="gallery-item"><img src="images/teach.JPG" alt="Event 6"></div>
     <div class="gallery-item"><img src="images/activity.JPG" alt="Event 7"></div>
-    <div class="gallery-item"><img src="images/princy.JPG" alt="Event 8"></div>
+    <div class="gallery-item"><img src="images/IMG_5925.JPG" alt="Event 8"></div>
     <div class="gallery-item wide"><img src="images/playarea.JPG" alt="Event 5"></div>
   </div>
 </section>
@@ -194,103 +237,102 @@
 </section>
 
 <script src="academics.js"></script>
-<link rel="stylesheet" href="academics.css">
-  
-
-
-
-    
+<link rel="stylesheet" href="academics.css">    
     </div>
     <script src="script.js"></script>
   </section>
 
-  
+<section class="contact-section" id="contact">
+  <!-- Main Heading -->
+  <h1 class="contact-main-heading">Contact Us</h1>
 
-  
-
-  <script src="trial.js"></script>
-
-    <section class="contact-section" id="contact">
-    <center><h1 class="section-title" id="contact" style="color: black;">Contact Us</h1></center><br>
-
-
-    <!-- Map and Address -->
-    <div class="contact-box">
-  <div class="map-container">
-  <iframe
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31551.2941151232!2d77.76413689696881!3d8.699929246313136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b040d392c6bc717%3A0x89ac67d06ceb952f!2sRoyal%20Nursery%20and%20Primary%20School!5e0!3m2!1sen!2sin!4v1752218808810!5m2!1sen!2sin"
-  width="100%" height="100%" style="border:0;"
-  allowfullscreen="" loading="lazy"
-  referrerpolicy="no-referrer-when-downgrade">
-</iframe>
-
-  </div>
-
-  <div class="contact-map-info">
-    <h2>Royal Vidyalaya</h2>
-    <p><strong>Address:</strong><br>
-      5/86 G, 5th Street,<br>
-      Kothanagar, Krishnapuram 627011<br>
-      Near: Krishnapuram Bus Stand<br>
-      Landmarks: Next to City Bank
-    </p>
-    <p><strong>Phone:</strong> +91 99522 10399</p>
-  </div>
-</div>
-
-
-
+  <div class="contact-container">
     
+    <!-- Left Side Contact Info -->
+    <div class="contact-info">
+      <h2>Get In Touch With Us Now!</h2>
+      <div class="info-grid">
+        <!-- Phone -->
+        <div class="info-box">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92V19a2 2 0 0 1-2.18 2A19.73 19.73 0 0 1 3 5.18 2 2 0 0 1 5 3h2.09a2 2 0 0 1 2 1.72c.12.81.37 1.6.72 2.33a2 2 0 0 1-.45 2.11L8.09 10.91a16 16 0 0 0 6 6l1.75-1.28a2 2 0 0 1 2.11-.45c.73.35 1.52.6 2.33.72a2 2 0 0 1 1.72 2z"/></svg>
+          <h3>Phone Number</h3>
+          <p>+91 85319 63686</p>
+        </div>
+
+        <!-- Mail -->
+        <div class="info-box">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"/><polyline points="22,6 12,13 2,6"/></svg>
+          <h3>Email</h3>
+          <p>royalvidyalayatirunelveli@gmail.com</p>
+          
+        </div>
+
+        <!-- Location -->
+        <div class="info-box">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <h3>Location</h3>
+          <p>Krishnapuram, Tirunelveli, Tamil Nadu</p>
+        </div>
+
+        <!-- Working Hours -->
+        <div class="info-box">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <h3>Working Hours</h3>
+          <p>Monday – Saturday<br>7:30 AM – 4:00 PM</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side Google Form -->
+    <div class="contact-form">
+      <h2>Contact Us</h2>
+      <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSewh_wii1ltjY3Wupm5ORJvu5oxc7xOZTjPFVogxSixWuP0hg/viewform?embedded=true" 
+        class="form-frame">
+        Loading…
+      </iframe>
+    </div>
+  </div><br><br><br>
+
+  <!-- Google Map Below -->
+  <div class="contact-map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31551.2941151232!2d77.76413689696881!3d8.699929246313136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b040d392c6bc717%3A0x89ac67d06ceb952f!2sRoyal%20Nursery%20and%20Primary%20School!5e0!3m2!1sen!2sin!4v1752218808810!5m2!1sen!2sin"
+      width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
   </div>
 </section>
 
+  
+      
+  
 
-<center>
-  <section class="contact-info">
-    <h2 style="color: black;">Know more</h2>
-    <p style="color: rgb(24, 24, 24); margin: 0;">
-        We’d love to hear from you. Reach out for any queries.<br>
-        <strong>Address:</strong> 5th street, Krishnapuram, India, Tamil Nadu<br>
-        <strong>Phone:</strong> +91 99522 10399<br>
-        <strong>Landline:</strong> 0462 - 2910399<br>
-        <strong>Email:</strong> royalschs@gmail.com
-    </p>
+  <!-- Social Links -->
+<div class="social-links">
+  
+  <!-- Facebook -->
+  <a href="https://www.facebook.com/profile.php?id=61580203445064" target="_blank" aria-label="Facebook">
+    <i class="fab fa-facebook-f"></i>
+  </a>
 
+  <!-- YouTube -->
+  <a href="https://youtube.com/@royalschooltirunelveli2074?si=UAitolGCdxCf6fQh" target="_blank" aria-label="YouTube">
+    <i class="fab fa-youtube"></i>
+  </a>
 
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/royal_vidyalaya_tirunelveli/" target="_blank" aria-label="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
 
-    <!-- ✅ Inline SVG Icons -->
-    <div class="social-links">
-        <!-- Facebook Attractive Icon -->
-<a href="https://www.facebook.com/profile.php?id=61580203445064" target="_blank" aria-label="Facebook">
-  <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 512 512">
-    <circle cx="256" cy="256" r="256" fill="#1877f2"/>
-    <path d="M353.3 330.7l11.7-76.1h-73.4v-49.4c0-20.8 10.2-41.1 42.9-41.1h33.2v-64.9s-30.2-5.2-59.1-5.2c-60.3 0-99.8 36.5-99.8 102.6v58h-67v76.1h67v183.7c13.4 2.1 27.1 3.2 41 3.2s27.6-1.1 41-3.2V330.7h61.5z" fill="#fff"/>
-  </svg>
-</a>
+  <!-- X / Twitter -->
+  <a href="https://x.com/Royalvidayala" target="_blank" aria-label="X">
+    <i class="fab fa-x-twitter"></i>
+  </a>
 
-
-      <!-- YouTube -->
-      <a href="https://youtube.com/@royalschooltirunelveli2074?si=UAitolGCdxCf6fQh" target="_blank" aria-label="YouTube">
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="#FF0000" viewBox="0 0 24 24" width="30" height="30">
-          <path d="M23.498 6.186a2.999 2.999 0 0 0-2.112-2.121C19.766 3.5 12 3.5 12 3.5s-7.766 0-9.386.565A3 3 0 0 0 .502 6.186 31.716 31.716 0 0 0 0 12a31.716 31.716 0 0 0 .502 5.814 2.999 2.999 0 0 0 2.112 2.121C4.234 20.5 12 20.5 12 20.5s7.766 0 9.386-.565a2.999 2.999 0 0 0 2.112-2.121A31.716 31.716 0 0 0 24 12a31.716 31.716 0 0 0-.502-5.814zM9.75 15.02V8.98l6.25 3.02-6.25 3.02z"/>
-        </svg>
-      </a>
-
-  <!-- Instagram (plain icon, no circle) -->
-<a href="https://www.instagram.com/royal_vidyalaya_tirunelveli/" target="_blank" aria-label="Instagram">
-  <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="#E4405F" viewBox="0 0 24 24" width="30" height="30">
-    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.342 3.608 1.317.975.975 1.255 2.242 1.317 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.342 2.633-1.317 3.608-.975.975-2.242 1.255-3.608 1.317-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.342-3.608-1.317-.975-.975-1.255-2.242-1.317-3.608C2.175 15.747 2.163 15.367 2.163 12s.012-3.584.07-4.85c.062-1.366.342-2.633 1.317-3.608C4.525 2.505 5.792 2.225 7.158 2.163 8.424 2.105 8.804 2.163 12 2.163zm0-2.163C8.756 0 8.334 0 7.052.07 5.775.137 4.624.454 3.678 1.4 2.732 2.346 2.415 3.497 2.348 4.774 2.278 6.056 2.278 6.478 2.278 12c0 5.522 0 5.944.07 7.226.067 1.277.384 2.428 1.33 3.374.946.946 2.097 1.263 3.374 1.33 1.282.07 1.704.07 7.226.07s5.944 0 7.226-.07c1.277-.067 2.428-.384 3.374-1.33.946-.946 1.263-2.097 1.33-3.374.07-1.282.07-1.704.07-7.226s0-5.944-.07-7.226c-.067-1.277-.384-2.428-1.33-3.374-.946-.946-2.097-1.263-3.374-1.33C17.944 0 17.522 0 12 0z"/>
-    <path d="M12 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998z"/>
-  </svg>
-</a>
+</div>
 
 
-<!-- X / Twitter -->
-<a href="https://x.com/Royalvidayala" target="_blank" aria-label="X">
-  <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="#1DA1F2" viewBox="0 0 24 24" width="30" height="30">
-    <path d="M23.954 4.569c-.885.392-1.83.656-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.708.869 3.213 2.188 4.096-.807-.026-1.566-.247-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.317 0-.626-.03-.928-.086.627 1.956 2.444 3.377 4.6 3.418-1.68 1.318-3.809 2.105-6.115 2.105-.398 0-.79-.023-1.175-.068 2.179 1.396 4.768 2.212 7.557 2.212 9.054 0 14.002-7.496 14.002-13.986 0-.21 0-.423-.015-.634.962-.695 1.797-1.562 2.457-2.549z"/>
-  </svg>
-</a>
 
     </div>
   </section>
@@ -298,8 +340,8 @@
 
           
 
-  <footer>
-    <p>&copy; 2025 Royal Vidyalaya. All rights reserved.</p>
+  <footer style="background-color: #13236a;">
+    <p style="background-color:#13236a;">&copy; 2025 Royal Vidyalaya. All rights reserved.</p>
   </footer>
 
     <style>

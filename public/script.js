@@ -37,6 +37,15 @@ links.forEach(link => {
   });
 });
 
+function toggleDescription(box) {
+  // Remove active from other boxes
+  document.querySelectorAll('.img-box').forEach(b => {
+    if (b !== box) b.classList.remove('active');
+  });
+  
+  // Toggle active for clicked box
+  box.classList.toggle('active');
+}
 
 
 
