@@ -1,0 +1,195 @@
+/* HEADER */
+header {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  z-index: 1000;
+  background: #fff; /* clear header */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Animated gradient background */
+.header-bg {
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(270deg, #313750, #4f5689, #b5a3f0, #a1d5e1);
+  background-size: 800% 800%;
+  animation: gradientMove 15s ease infinite;
+  z-index: -1;
+  opacity: 0.2;
+}
+
+/* Gradient animation keyframes */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Logo */
+/* Logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* space between logo and text */
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;         /* makes it circular */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;           /* circle background */
+  border: 3px solid #800020;  /* royal red border */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fit image inside circle */
+}
+
+.logo-text {
+  font-family: 'Playfair Display', serif; /* Added Playfair Display */
+  font-size: 2rem;
+  font-weight: 700;
+  margin-left: 12px;
+  color: #111;
+  background: linear-gradient(90deg, #2b0131, #d90ac1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background 0.4s ease;
+}
+
+
+/* Navigation */
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-item {
+  position: relative;
+  font-size: 1.4rem;
+  text-decoration: none;
+  font-weight: 500;
+  color: #111;
+  transition: all 0.3s ease;
+}
+
+/* Gradient underline animation */
+.nav-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #007BFF, #00CFFF);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+.nav-item:hover {
+  transform: translateY(-2px);
+  color: #007BFF;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: #111;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    flex-direction: column;
+    gap: 20px;
+    background: #fff;
+    width: 260px;
+    padding: 25px;
+    border-radius: 15px 0 0 15px;
+    box-shadow: -5px 5px 25px rgba(0,0,0,0.1);
+    transition: right 0.4s ease;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Optional particles effect */
+.header-bg::before, .header-bg::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: floatParticles 6s infinite;
+}
+
+.header-bg::after {
+  width: 12px;
+  height: 12px;
+  animation-duration: 9s;
+  animation-delay: 2s;
+}
+
+@keyframes floatParticles {
+  0% { transform: translate(-50%, -50%) translateY(0px) rotate(0deg); opacity: 0.2; }
+  50% { transform: translate(-50%, -50%) translateY(-30px) rotate(180deg); opacity: 0.5; }
+  100% { transform: translate(-50%, -50%) translateY(0px) rotate(360deg); opacity: 0.2; }
+}

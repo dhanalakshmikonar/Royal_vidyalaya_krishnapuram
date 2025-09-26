@@ -1,4 +1,5 @@
 /* Header Base Styles */
+
 /* --- Event Ticker Styles --- */
 .event-ticker {
   position: sticky;
@@ -13,6 +14,7 @@
   display: flex;
   align-items: center;
   font: 600 14px/1 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  margin-bottom: 0%;
 }
 
 .ticker-track {
@@ -62,109 +64,6 @@
     line-height: 36px;
     padding: 0 1rem;
     font-size: 13px;
-  }
-}
-
-
-header {
-  background: linear-gradient(to right, #003366, #004080);
-  color: white;
-  padding: 15px 20px;
-  margin-top: 2%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  z-index: 1000;
-  height: 80px;
-  padding-right: 100px;
-}
-
-/* Logo */
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 12px; /* space between logo and text */
-}
-
-.logo {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;         /* makes it circular */
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #fff;           /* circle background */
-  border: 3px solid #800020;  /* royal red border */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* fit image inside circle */
-}
-
-.logo-text {
-  font-size: 24px;
-  font-weight: bold;
-  color: #fefdfd; /* matches border for prominence */
-  font-family: Arial, sans-serif;
-}
-
-
-/* Hamburger Button */
-.hamburger {
-  font-size: 28px;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  display: none; /* hidden on desktop */
-}
-
-/* Navigation Links (Desktop) */
-.nav-links {
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  padding: 10px;
-  transition: background 0.3s ease;
-}
-
-.nav-links a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 4px;
-}
-
-/* Responsive (Mobile) */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    flex-direction: column;
-    background-color: #003366;
-    display: none;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
-  .nav-links a {
-    padding: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
   }
 }
 
