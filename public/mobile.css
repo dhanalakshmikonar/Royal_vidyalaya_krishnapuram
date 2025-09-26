@@ -76,55 +76,48 @@
   }
 }
 
-/* Mobile Responsive - Mission & Vision */
-@media screen and (max-width: 768px) {
-  .mv-wrapper {
-    max-width: 100%;
-    padding: 15px;
-  }
-  .mv-slide {
-    height: auto !important;   /* let slide expand based on content */
-    overflow: visible !important; /* show full paragraph */
-  }
+/* Mobile responsiveness for Mission & Vision */
+
+/* For tablets and small screens */
+@media (max-width: 768px) {
   .mv-slide h1 {
-    font-size: 28px;
-    line-height: 1.3;
+    font-size: 1.8rem;
   }
+
   .mv-slide p {
-    font-size: 10px;
-    line-height: 1;
-    text-align: justify;
-    margin-bottom: 20px;
+    font-size: 0.6rem;
+    line-height: 1.6;
   }
-  .mv-toggle-buttons {
-    gap: 15px;
-    flex-wrap: wrap;
-  }
+
   .mv-toggle-buttons button {
-    font-size: 16px;
-    padding: 10px 15px;
+    padding: 8px 20px;
+    font-size: 0.9rem;
   }
 }
 
-@media screen and (max-width: 480px) {
-  .mv-wrapper {
-    padding: 10px;
-  }
+/* For mobile devices */
+@media (max-width: 480px) {
   .mv-slide h1 {
-    font-size: 24px;
+    font-size: 1rem;
   }
+
   .mv-slide p {
-    font-size: 5px;
-    line-height: 1;
+    font-size: 0.3rem;
+    line-height: 1.5;
   }
+
   .mv-toggle-buttons {
-    flex-direction: column;
     gap: 10px;
+    flex-wrap: wrap; /* wrap buttons if needed */
   }
+
   .mv-toggle-buttons button {
-    width: 100%;
-    font-size: 14px;
-    padding: 10px;
+    padding: 7px 15px;
+    font-size: 0.85rem;
+  }
+
+  .mv-wrapper {
+    margin: 30px 10px;
+    padding: 0 10px;
   }
 }
-
