@@ -20,33 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
-const links = navLinks.querySelectorAll('a');
-
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
-});
-
-// Hide the nav menu when a link is clicked
-links.forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('show');
-  });
-});
-
-function toggleDescription(box) {
-  // Remove active from other boxes
-  document.querySelectorAll('.img-box').forEach(b => {
-    if (b !== box) b.classList.remove('active');
-  });
-  
-  // Toggle active for clicked box
-  box.classList.toggle('active');
-}
-
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 
