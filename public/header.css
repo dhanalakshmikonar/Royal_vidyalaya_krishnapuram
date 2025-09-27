@@ -20,12 +20,13 @@ header {
   left: -50%;
   width: 200%;
   height: 100%;
-  background: linear-gradient(270deg, #313750, #4f5689, #b5a3f0, #053e4b);
+  background: linear-gradient(270deg, #0c1029, #040346, #090231); /* bright & vibrant pinks */
   background-size: 800% 800%;
   animation: gradientMove 15s ease infinite;
   z-index: -1;
-  opacity: 0.2;
+  opacity: 0.35; /* slightly more visible */
 }
+
 
 /* Gradient animation keyframes */
 @keyframes gradientMove {
@@ -67,7 +68,7 @@ header {
   font-weight: 700;
   margin-left: 12px;
   color: #111;
-  background: linear-gradient(90deg, #2b0131, #d90ac1);
+  background: linear-gradient(90deg, #4a0651, #852f78);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: background 0.4s ease;
