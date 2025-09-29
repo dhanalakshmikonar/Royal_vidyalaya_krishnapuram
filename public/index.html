@@ -343,21 +343,20 @@
 
       const result = await response.json();
 
+      // Show alert instead of writing to page
       if (result.success) {
-        formMessage.style.color = "green";
-        formMessage.textContent = "Message sent successfully!";
+        alert("Message sent successfully!");
         form.reset();
       } else {
-        formMessage.style.color = "red";
-        formMessage.textContent = "Failed to send message.";
+        alert("Failed to send message: " + result.message);
       }
     } catch (err) {
-      formMessage.style.color = "red";
-      formMessage.textContent = "Error sending message.";
       console.error(err);
+      alert("Error sending message. Check console for details.");
     }
   });
 </script>
+
 
   
 <script src="server.js"></script>

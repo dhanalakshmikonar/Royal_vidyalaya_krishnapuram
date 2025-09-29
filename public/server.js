@@ -7,11 +7,15 @@ export default async function handler(req, res) {
 
   const { name, email, phone, message } = req.body;
 
+  if (!name || !email || !phone || !message) {
+    return res.status(400).json({ success: false, message: "All fields are required." });
+  }
+
   try {
     const transporter = nodemailer.createTransport({
       service: "Gmail",
       auth: {
-        user: process.env.GMAIL_USER,       // set in Vercel Environment Variables
+        user: process.env.GMAIL_USER,       // your Gmail
         pass: process.env.GMAIL_APP_PASS,   // Gmail App Password
       },
     });
