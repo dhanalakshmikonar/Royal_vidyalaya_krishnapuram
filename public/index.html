@@ -311,14 +311,54 @@
     <!-- Right Side Custom Contact Form -->
 <div class="contact-form">
   <h2>Contact Us</h2>
-  <form id="contactForm">
+ <form id="contactForm"> 
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="email" placeholder="Your Email" required>
     <input type="tel" name="phone" placeholder="Your Phone" required>
     <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
     <button type="submit">Submit</button>
     <p id="formMessage" style="margin-top: 10px;"></p>
-  </form>
+</form>
+
+<script>
+  const form = document.getElementById("contactForm");
+  const formMessage = document.getElementById("formMessage");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = {
+      name: form.name.value,
+      email: form.email.value,
+      phone: form.phone.value,
+      message: form.message.value,
+    };
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        formMessage.style.color = "green";
+        formMessage.textContent = "Message sent successfully!";
+        form.reset();
+      } else {
+        formMessage.style.color = "red";
+        formMessage.textContent = "Failed to send message.";
+      }
+    } catch (err) {
+      formMessage.style.color = "red";
+      formMessage.textContent = "Error sending message.";
+      console.error(err);
+    }
+  });
+</script>
+
   
 <script src="server.js"></script>
 </div>
