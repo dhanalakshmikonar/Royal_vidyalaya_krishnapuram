@@ -308,14 +308,23 @@
     </div>
 
     <!-- Right Side Google Form -->
-    <div class="contact-form">
-      <h2>Contact Us</h2>
-      <iframe 
-        src="https://docs.google.com/forms/d/e/1FAIpQLSewh_wii1ltjY3Wupm5ORJvu5oxc7xOZTjPFVogxSixWuP0hg/viewform?embedded=true" 
-        class="form-frame">
-        Loading…
-      </iframe>
-    </div>
+    <!-- Right Side Custom Contact Form -->
+<div class="contact-form">
+  <h2>Contact Us</h2>
+  <form id="contactForm">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="tel" name="phone" placeholder="Your Phone" required>
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit">Submit</button>
+    <p id="formMessage" style="margin-top: 10px;"></p>
+  </form>
+  
+<script src="server.js"></script>
+</div>
+
+
+    
   </div><br><br><br>
 
   <!-- Google Map Below -->

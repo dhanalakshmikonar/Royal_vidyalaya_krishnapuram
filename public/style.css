@@ -637,3 +637,39 @@ body {
     margin-bottom: 20px;
   }
 }
+
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.contact-form button {
+  background-color: #100342; /* maroon */
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #350c87;
+}
+
+#formMessage {
+  color: rgb(101, 9, 181);
+  font-weight: 500;
+}
