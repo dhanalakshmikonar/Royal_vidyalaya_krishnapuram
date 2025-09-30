@@ -311,51 +311,20 @@
     <!-- Right Side Custom Contact Form -->
 <div class="contact-form">
   <h2>Contact Us</h2>
- <form id="contactForm"> 
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <input type="tel" name="phone" placeholder="Your Phone" required>
-    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-    <button type="submit">Submit</button>
-    <p id="formMessage" style="margin-top: 10px;"></p>
+<form action="https://formsubmit.co/konardhanalakshmi@gmail.com" method="POST">
+  <!-- Disable captcha -->
+  <input type="hidden" name="_captcha" value="false">
+
+  <!-- Optional: redirect after submit -->
+  <input type="hidden" name="_next" value="https://royalvidyalaya.com/thank-you.html">
+
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <input type="tel" name="phone" placeholder="Your Phone" required>
+  <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+  <button type="submit">Submit</button>
 </form>
 
-<script>
-  const form = document.getElementById("contactForm");
-  const formMessage = document.getElementById("formMessage");
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const formData = {
-      name: form.name.value,
-      email: form.email.value,
-      phone: form.phone.value,
-      message: form.message.value,
-    };
-
-    try {
-      const response = await fetch("/api/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
-      });
-
-      const result = await response.json();
-
-      // Show alert instead of writing to page
-      if (result.success) {
-        alert("Message sent successfully!");
-        form.reset();
-      } else {
-        alert("Failed to send message: " + result.message);
-      }
-    } catch (err) {
-      console.error(err);
-      alert("Error sending message. Check console for details.");
-    }
-  });
-</script>
 
 
   
