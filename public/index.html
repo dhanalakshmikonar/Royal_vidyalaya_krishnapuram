@@ -311,10 +311,7 @@
     <!-- Right Side Custom Contact Form -->
 <div class="contact-form">
   <h2>Contact Us</h2>
-<form id="contactForm" action="https://formsubmit.co/royalvidyalayatirunelveli@gmail.com" method="POST" onsubmit="showAlert()">
-  <!-- Disable captcha -->
-  <input type="hidden" name="_captcha" value="false">
-
+<form id="contactForm">
   <input type="text" name="name" placeholder="Your Name" required>
   <input type="email" name="email" placeholder="Your Email" required>
   <input type="tel" name="phone" placeholder="Your Phone" required>
@@ -323,9 +320,33 @@
 </form>
 
 <script>
-  function showAlert() {
-    alert("🎉 Thank you for filling out the form! We’ll get back to you soon. 🌟");
-  }
+  const form = document.getElementById('contactForm');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('https://api.staticforms.xyz/submit', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Authorization': 'Bearer YOUR_ACCESS_KEY'
+        }
+      });
+
+      if (response.ok) {
+        alert("🎉 Thank you for contacting us! Your message has been sent successfully. 🌟");
+        form.reset();
+      } else {
+        alert("Oops! Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      alert("Error sending message. Check your internet connection.");
+      console.error(err);
+    }
+  });
 </script>
 
 </div>
