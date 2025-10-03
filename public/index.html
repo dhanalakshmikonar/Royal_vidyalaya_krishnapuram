@@ -40,35 +40,43 @@
 </section>
 
 
+
 <!-- Header with Logo + Hamburger + Navigation -->
 <header id="header">
-  <!-- Animated background -->
-  <div class="header-bg"></div>
-
-  <div class="logo-container">
-    <div class="logo">
-      <img src="images/logo.ico" alt="Royal Vidyalaya Logo">
-    </div>
+  <div class="container">
+    <!-- Logo Left -->
+   <div class="logo-container">
+  <a href="#home" class="logo-link">
+    <img src="images/logo.ico" alt="Royal Vidyalaya Logo" class="logo-img">
     <span class="logo-text">Royal Vidyalaya</span>
+  </a>
+</div>
+
+
+    <!-- Navigation Right -->
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="nav-item">Home</a>
+      <a href="#about" class="nav-item">About Us</a>
+      <a href="#event" class="nav-item">Event</a>
+      <a href="#gallery" class="nav-item">Gallery</a>
+      <a href="#academics" class="nav-item">Academics</a>
+      <a href="#contact" class="nav-item">Contact Us</a>
+    </nav>
+
+    <!-- Hamburger for Mobile -->
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
+</header>
 
-  <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
 
-  <nav class="nav-links" id="navLinks">
-    <a href="#home" class="nav-item">Home</a>
-    <a href="#about" class="nav-item">About Us</a>
-    <a href="#event" class="nav-item">Event</a>
-    <a href="#gallery" class="nav-item">Gallery</a>
-    <a href="#academics" class="nav-item">Academics</a>
-    <a href="#contact" class="nav-item">Contact Us</a>
-  </nav>
-
+  
   <link rel="stylesheet" href="header.css"> 
 </header>
+
     <script src="script.js"></script>
   <section id="home" class="full-screen">
     <div class="home-content">
@@ -76,6 +84,7 @@
       <p style="color: wheat;"> It's the leaders' domain</p>
       <a href="#about" class="btn">Learn More</a>
     </div>
+    
   </section>
 
 
