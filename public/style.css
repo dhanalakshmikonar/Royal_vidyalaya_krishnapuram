@@ -217,7 +217,7 @@ html {
 /* ===== Gallery Section ===== */
 .gallery-section {
   padding: 60px 30px;
-  background: #f7f9fc;
+  background: #cdced0;
   text-align: center;
   scroll-behavior: smooth; /* Smooth scroll */
 }
