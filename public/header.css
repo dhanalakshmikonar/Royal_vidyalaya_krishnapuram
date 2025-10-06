@@ -90,45 +90,102 @@
   color: #ffd700;
 }
 
-/* HAMBURGER MENU */
+/* ===== Hamburger Button ===== */
 .hamburger {
-  display: none;
+  display: none; /* hidden on desktop */
   flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
   cursor: pointer;
+  border: none;
+  background: none;
+  z-index: 1001;
 }
 
 .hamburger span {
-  width: 25px;
+  display: block;
   height: 3px;
-  background: #fff;
+  background: #faf7f7;
   border-radius: 2px;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
-/* RESPONSIVE */
-@media screen and (max-width: 992px) {
+/* Hamburger animation when active */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ===== Navigation Links ===== */
+.nav-links {
+  display: flex; /* desktop default */
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #efeeee;
+  font-weight: 500;
+}
+
+/* ===== Mobile Styles ===== */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: flex; /* show hamburger on mobile */
+  }
+
   .nav-links {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    height: 100vh;
-    width: 250px;
-    background: rgba(0,0,0,0.95);
+    display: none; /* hidden by default on mobile */
+    position: absolute;
+    top: 60px; /* adjust based on header */
+    right: 0;
+    background: #fff;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    transition: 0.3s ease;
+    width: 200px;
+    padding: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  .nav-links a {
+    margin: 10px 0;
+  }
+
+  /* When JS toggles active */
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%; /* below header */
+    right: 0;
+    background: #070a2a;
+    flex-direction: column;
+    width: 200px;
+    padding: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    z-index: 999; /* ensure it appears above everything */
   }
 
   .nav-links.active {
-    right: 0;
+    display: flex;
   }
 
-  .hamburger {
-    display: flex;
+  .nav-links a {
+    margin: 10px 0;
+    color: #000; /* mobile text color */
   }
 }
