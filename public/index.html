@@ -5,7 +5,8 @@
   
   <title>Royal Vidyalaya</title>
   
-  <link rel="stylesheet" href="style.css">   <!-- desktop -->
+  <link rel="stylesheet" href="style.css">  
+  <link rel="stylesheet" href="header.css"> <!-- desktop -->
 <link rel="stylesheet" href="mobile.css">  <!-- overrides for mobile -->
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -19,63 +20,67 @@
 
 </head>
 <body>
-  <!-- Event Ticker (Top Bar) -->
-<section class="event-ticker" role="region" aria-label="Latest events">
-  <div class="ticker-track">
-    <ul class="ticker-list">
-      <li>Inauguration day celebrations</li>
-      <li>Annual day event</li>
-      <li>Semester exams scheduled</li>
-      <li>Sports day inauguration</li>
-      <li>Parents teachers meet</li>
-      <li>Sports day activities</li>
-      <li>Inauguration day celebrations</li>
-      <li>Annual day event</li>
-      <li>Semester exams scheduled</li>
-      <li>Sports day inauguration</li>
-      <li>Parents teachers meet</li>
-      <li>Sports day activities</li>
-    </ul>
-  </div><br><br><br>
-</section>
 
 
 
 <!-- Header with Logo + Hamburger + Navigation -->
-<header id="header">
-  <div class="container">
-    <!-- Logo Left -->
-   <div class="logo-container">
-  <a href="#home" class="logo-link">
-    <img src="images/logo.ico" alt="Royal Vidyalaya Logo" class="logo-img">
-    <span class="logo-text">Royal Vidyalaya</span>
-  </a>
+<!-- ======= Header with Event Ticker (Desktop Style) ======= -->
+  <!-- Event Ticker -->
+  <!-- Event Ticker -->
+<div class="event-ticker">
+  <marquee behavior="scroll" direction="left" scrollamount="6" style="color: gainsboro;">
+    🎉 Admission Open 2026-27 | Annual Day Celebration Coming Soon | Join Our Royal Vidyalaya Family 🎓 
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    🎓 Royal Vidyalaya Welcomes You | Excellence in Education  | Admissions Open for 2026–27 🎉 
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    📚 Empowering Students for a Brighter Future | Science Fair 2025 Coming Soon | Join Our Royal Journey 🌟 
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    🏆 Celebrating Years of Learning & Leadership | Annual Sports Meet 2025 | Enroll Now for a Royal Experience 🎈
+     &nbsp;&nbsp;|&nbsp;&nbsp;
+    🎉 Admission Open 2026-27 | Annual Day Celebration Coming Soon | Join Our Royal Vidyalaya Family 🎓 
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    🎓 Royal Vidyalaya Welcomes You | Excellence in Education  | Admissions Open for 2026–27 🎉 
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    📚 Empowering Students for a Brighter Future | Science Fair 2025 Coming Soon | Join Our Royal Journey 🌟 
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    🏆 Celebrating Years of Learning & Leadership | Annual Sports Meet 2025 | Enroll Now for a Royal Experience 🎈
+  </marquee>
 </div>
 
 
-    <!-- Navigation Right -->
-    <nav class="nav-links" id="navLinks">
-      <a href="#home" class="nav-item">Home</a>
-      <a href="#about" class="nav-item">About Us</a>
-      <a href="#event" class="nav-item">Event</a>
-      <a href="#gallery" class="nav-item">Gallery</a>
-      <a href="#academics" class="nav-item">Academics</a>
-      <a href="#contact" class="nav-item">Contact Us</a>
+<header class="main-header">
+  <div class="header-center">
+    <!-- Logo -->
+    <a href="index.html" class="logo-link">
+      <img src="images/logo.ico" alt="Royal Vidyalaya Logo" class="logo-img">
+    </a>
+
+    <!-- Hamburger Icon for mobile -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav class="nav-bar" id="nav-bar">
+      <ul class="nav-list">
+        <li><a href="#home" class="nav-item">Home</a></li>
+        <li><a href="#about" class="nav-item">About Us</a></li>
+        <li><a href="#event" class="nav-item">Event</a></li>
+        <li><a href="#gallery" class="nav-item">Gallery</a></li>
+        <li><a href="#academics" class="nav-item">Academics</a></li>
+        <li><a href="#contact" class="nav-item">Contact Us</a></li>
+      </ul>
     </nav>
 
-    <!-- Hamburger for Mobile -->
-    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <script src="header.js"></script>
   </div>
-<script src="header.js"></script>
-
-
-  
-  <link rel="stylesheet" href="header.css"> 
 </header>
+
+
+
+
 
     <script src="script.js"></script>
   <section id="home" class="full-screen">

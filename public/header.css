@@ -1,191 +1,161 @@
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Playfair Display', serif;
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-}
-
-.logo-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.logo-img {
-  height: 50px; /* adjust size */
-  width: auto;
-  margin-right: 10px;
-}
-
-.logo-text {
-  font-size: 22px; /* adjust */
-  font-weight: bold;
-  color: #fff;  /* change if background is light */
-}
-
-
-/* HEADER */
-#header {
+/* Header layout: everything in a single line, centered */
+.main-header {
+  background-color: rgb(237, 247, 246);
   width: 100%;
-  background: rgba(3, 3, 55, 0.85); /* Dark overlay */
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 15px 50px;
-  box-shadow: 0 4px 10px rgba(11, 1, 26, 0.1);
-  transition: all 0.3s ease;
-}
-
-/* CONTAINER FLEX */
-#header .container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center; /* center content horizontally */
+  /* allow background to show */
+  padding: 15px 0;
 }
 
-/* LOGO */
-.logo-container img {
-  height: 50px;
-}
-
-/* NAVIGATION */
-.nav-links {
+/* Center container to hold logo + menu */
+.header-center {
   display: flex;
   align-items: center;
+  gap: 10px; /* space between logo and menu */
+}
+
+/* Logo in circle with hover effect */
+.logo-link {
+  display: block;
+  gap: 10px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #fff; /* optional */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.logo-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Logo hover effect */
+.logo-link:hover {
+  transform: scale(1.1) ;
+  box-shadow: 0 5px 20px rgba(19, 18, 18, 0.5);
+}
+
+/* Navigation */
+.nav-bar {
+  display: flex;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
   gap: 25px;
+  padding: 0;
+  margin: 10px 0 0 0; /* move menu 10px down */
 }
 
-.nav-links .nav-item {
+.nav-list li a {
   text-decoration: none;
-  color: #fff;
-  font-weight: 500;
-  padding: 8px 12px;
-  border-radius: 4px;
+  color: #0b0b0b;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif; /* modern clean font */
+  font-size: 16px;
+  letter-spacing: 1px; /* adds spacing between letters */
   transition: all 0.3s ease;
   position: relative;
 }
 
-.nav-links .nav-item::after {
+/* Hover effect: underline animation */
+.nav-list li a::after {
   content: '';
   position: absolute;
   width: 0;
   height: 2px;
-  background: #ffd700;
-  left: 0;
   bottom: -4px;
-  transition: 0.3s ease;
+  left: 0;
+  background-color: #f0c040; /* highlight color */
+  transition: width 0.3s;
 }
 
-.nav-links .nav-item:hover::after {
+.nav-list li a:hover::after {
   width: 100%;
 }
 
-.nav-links .nav-item:hover {
-  color: #ffd700;
+.nav-list li a:hover {
+  color: #f0c040; /* optional color change on hover */
 }
 
-/* ===== Hamburger Button ===== */
+/* ===== HAMBURGER MENU ===== */
 .hamburger {
   display: none; /* hidden on desktop */
   flex-direction: column;
   justify-content: space-between;
-  width: 25px;
-  height: 20px;
+  width: 30px;
+  height: 22px;
   cursor: pointer;
-  border: none;
-  background: none;
-  z-index: 1001;
+  z-index: 1001; /* make sure it stays on top */
+  margin-bottom: 10px;
 }
 
 .hamburger span {
+  
   display: block;
   height: 3px;
-  background: #faf7f7;
+  width: 100%;
+  background-color: #013a63;
   border-radius: 2px;
   transition: all 0.3s ease;
 }
 
-/* Hamburger animation when active */
-.hamburger.active span:nth-child(1) {
+/* Hamburger open animation */
+.hamburger.open span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
-.hamburger.active span:nth-child(2) {
+.hamburger.open span:nth-child(2) {
   opacity: 0;
 }
-.hamburger.active span:nth-child(3) {
+.hamburger.open span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* ===== Navigation Links ===== */
-.nav-links {
-  display: flex; /* desktop default */
-  gap: 20px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #efeeee;
-  font-weight: 500;
-}
-
-/* ===== Mobile Styles ===== */
+/* ===== MOBILE RESPONSIVE ===== */
 @media screen and (max-width: 768px) {
+  /* Show hamburger */
   .hamburger {
-    display: flex; /* show hamburger on mobile */
-  }
-
-  .nav-links {
-    display: none; /* hidden by default on mobile */
+    display: flex;
     position: absolute;
-    top: 60px; /* adjust based on header */
-    right: 0;
-    background: #fff;
-    flex-direction: column;
-    width: 200px;
-    padding: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    top: 30px;
+    right: 20px; /* aligns hamburger to top-right corner */
   }
 
-  .nav-links a {
-    margin: 10px 0;
-  }
-
-  /* When JS toggles active */
-  .nav-links.active {
-    display: flex;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-links {
+  /* Hide desktop nav-bar by default */
+  .nav-bar {
     display: none;
     position: absolute;
-    top: 100%; /* below header */
+    top: 70px; /* below header/logo */
     right: 0;
-    background: #070a2a;
+    background: rgba(255,255,255,0.95);
     flex-direction: column;
-    width: 200px;
-    padding: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    z-index: 999; /* ensure it appears above everything */
+    align-items: flex-start;
+    padding: 15px 20px;
+    width: 220px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
   }
 
-  .nav-links.active {
+  /* Show nav-bar when active */
+  .nav-bar.active {
     display: flex;
   }
 
-  .nav-links a {
-    margin: 10px 0;
-    color: #000; /* mobile text color */
+  /* Nav links column */
+  .nav-list {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .nav-list li a {
+    font-size: 16px;
+    padding: 5px 0;
   }
 }
+
